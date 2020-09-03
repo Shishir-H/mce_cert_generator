@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container mt-10">
+        <form action="index.php" method="post" id="form">
+            <input type="text" placeholder="Full Name" name="name" class="form-control" required>
+            <input type="text" placeholder="USN" name="usn" class="form-control" required>
+            
+            
+            <select class="form-control" name="branch" required>
+              
+                <option value disabled selected hidden>Branch</option>
+                <option value="Mechanical Engineering">Mechanical Engineering</option>
+                <option value="Electronics & Instrumentation Technology">Electronics & Instrumentation Technology</option>
+                <option value="Computer Science & Engineering">Computer Science & Engineering</option>
+                <option value="Civil Engineering">Civil Engineering</option>
+                <option value="Industrial Production & Engineering">Industrial Production & Engineering</option>
+                <option value="Electricals & Electronics Engineering">Electrical & Electronics Engineering</option>
+                <option value="Information Science & Engineering">Information Science & Engineering</option>
+                <option value="Electronics & Instrumentation Engineering">Electronics & Instrumentation Engineering</option>
+              
+            </select>
+            <select class="form-control" name="document" id = "doc"  required>
+              
+              <option value disabled selected hidden>Required Document</option>
+              <option value="1">Study Certificate ( General )</option>
+              <option value="2">Study Certificate ( purpose for Bank loan renewal )</option>
+              <option value="3">Course completion Certificate</option>
+              <option value="4">Character Certificate</option>
+              <option value="5">No Objection Certificate</option>
+              <option value="6">Expenditure Certificate</option>
+              <option value="7">Provisional Degree Certificate</option>
+              <option value="8">CGPA Calculation Certificate</option>
+            
+          </select>
+          <input  type="text" placeholder="2018-19" name="startYear" class="form-control" id="startYear"  >
+          <input type="text" placeholder="2021-22" name="completionYear" class="form-control" id="completionYear" >
+          <input type="text" placeholder="Current Academic Year" name="curAcYear" class="form-control" id="curAcYear" >
+          <input type="text" placeholder="Year" name="year" class="form-control" id="year" >
+          <input type="text" placeholder="Semester" name="sem" class="form-control" id="sem" >
+          <input type="text" placeholder="College You want to be admitted" name="college" class="form-control" id="college" >
+          <div class="semCgpa" id="inSgpa">
+            <input type="text" placeholder="SGPA in SEM 1" name="sem1" class="form-control" id="sem1" >
+            <input type="text" placeholder="SGPA in SEM 2" name="sem2" class="form-control" id="sem2" >
+            <input type="text" placeholder="SGPA in SEM 3" name="sem3" class="form-control" id="sem3" >
+            <input type="text" placeholder="SGPA in SEM 4" name="sem4" class="form-control" id="sem4" >
+            <input type="text" placeholder="SGPA in SEM 5" name="sem5" class="form-control" id="sem5" >
+            <input type="text" placeholder="SGPA in SEM 6" name="sem6" class="form-control" id="sem6" >
+            <input type="text" placeholder="SGPA in SEM 7" name="sem7" class="form-control" id="sem7" >
+            <input type="text" placeholder="SGPA in SEM 8" name="sem8" class="form-control" id="sem8" >
+          </div>
+            <button class="btn btn-success" type="submit" id="btn_sbt" >Submit</button>
+    
+        </form>
+    
+    </div>
+    <script src="./script.js"></script>
+    
+</body>
+</html>
