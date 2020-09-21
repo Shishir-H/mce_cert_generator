@@ -6,56 +6,58 @@ use PHPMailer\PHPMailer\Exception;
 use Mpdf\Mpdf;
 
 require_once __DIR__ . '/vendor/autoload.php';
-$stylesheet = file_get_contents('./pdf.css');
+include './dbOps.php';
+$stylesheet = file_get_contents('./styles/pdf.css');
 
     $name = $_POST['name'];
     $usn = $_POST['usn'];
     $branch = $_POST['branch'];
     $document = $_POST['document'];
+    $curAcYear = $_POST['curAcYear'];
+    $year = $_POST['year'];
 
-    // $startYear = $_POST['startYear'];
-    // $completionYear = $_POST['completionYear'];
-    // $curAcYear = $_POST['curAcYear'];
-    // $year = $_POST['year'];
+    // Assigning documents to the value
+    $docArr = array("Study Certificate 1 ( General )", "Study Certificate 2 ( purpose for Bank loan renewal)", "Course completion Certificate","4)Character Certificate","No Objection Certificate","Expenditure Certificate","Provisional Degree Certificate","CGPA Calculation Certificate");
 
-if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && isset($_POST['document']))
+    
+
+if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && isset($_POST['document']) && isset($_POST['curAcYear']))
 {
-    
-    $college = $_POST['college'];
-    
     //to get current year
     $date = date("d/m/Y");
-    $curYear = date('y');
-    $prevYear = date('Y')-1;
 
+    $reqstdDoc =  $docArr[$document];
+    echo $reqstdDoc;
 
-
-        
-
-    
+    // Insert into DataBase
+    $sql = new Mysql();
+    $sql->dbConnect();
+    $sql->insertInto("student_details",[$name,$usn,$branch,$reqstdDoc,$date]);
+   
+    $college = $_POST['college'];
+ 
     // a new instance of the library
 
     $mpdf = new Mpdf(); 
 
     $data = "";
 
-    if($document == 1){
+    if($document == 0){
         
         $data .= (
             '<div>
-                <p class = "head-para">MCE/Dean-SA/study Cer/'.$prevYear.'-'.$curYear.'</p> 
-                <p class = "head-para">Date : '.$date.'</p> 
+                <pre><p>MCE/Dean-SA/study Cer/'.$curAcYear.'                                                  Date : '.$date.'</p></pre> 
                 <h1>study certificate</h1>
-                <p>This is to certify that Mr/Ms. <span>'.$name.'</span> bearing USN: <span>'.$usn.'</span> is a bonafide student of this institution.  He/She is eligible for 3rd year B.E. in <span>'.$branch.'</span> during the Academic year <span>'.$prevYear.'-'.$curYear.'</span></p>
+                <p>This is to certify that Mr/Ms. <span>'.$name.'</span> bearing USN: <span>'.$usn.'</span> is a bonafide student of this institution.  He/She is eligible for '.$year.' year B.E. in <span>'.$branch.'</span> during the Academic year <span>'.$curAcYear.'</span></p>
                 <p>His/her character and conduct are/were good, during his/her stay in this College.</p>
             </div>');
            echo $data;
-    }else if($document==2){
+    }else if($document==1){
         $data .= (
             '<div>
-                <p>MCE/Dean-SA/study Cer/'.$prevYear.'-'.$curYear.' Date: '.$date.'</p>
-                <h1>STUDY CERTIFICATE FOR LOAN</h1>
-                <p>This is to certify that Mr/Ms. <span>'.$name.'</span>  bearing USN: <span>'.$usn.'</span> is a bonafide student of this institution.  He/She is eligible for 1st year B.E. in <span>'.$branch.'</span> during the Academic year <span>2019-20.</span></p>
+            <pre><p>MCE/Dean-SA/study Cer/'.$curAcYear.'                                                  Date : '.$date.'</p></pre> 
+            <h1>STUDY CERTIFICATE FOR LOAN</h1>
+                <p>This is to certify that Mr/Ms. <span>'.$name.'</span>  bearing USN: <span>'.$usn.'</span> is a bonafide student of this institution.  He/She is eligible for '.$year.' year B.E. in <span>'.$branch.'</span> during the Academic year <span>'.$curAcYear.'</span></p>
                 <p>He/She has to pay the fee details as follows.</p>
                 <table class = "table">
             
@@ -75,15 +77,14 @@ if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && 
                 <p>His/her character and conduct are/were good, during his/her stay in this College.</p>
             </div>');
 
-    }else if($document ==3){
-        
+    }else if($document ==2){
     $startYear = $_POST['startYear'];
     $completionYear = $_POST['completionYear'];
     
         $data .= (
             
             '<div>
-                <p>MCE/Dean-SA/CCC/'.$prevYear.'-'.$curYear.' Date: '.$date.'</p>
+            <pre><p>MCE/Dean-SA/CCC/'.$curAcYear.'                                                  Date : '.$date.'</p></pre> 
                 <h1>COURSE COMPLETION CERTIFICATE</h1>
                 <p>This is to certify that Mr/Ms. <span>'.$name.'</span> bearing USN: <span>'.$usn.'</span> is a bonafide student of this institution and studied B.E. in <span>'.$branch.'</span> during the academic year <span>'.$startYear.' to  '.$completionYear.'</span>.</p>
                 <p>He/She has completed his/her four years Programme.  He/She has successfully fulfilled the course requirements and has attained the qualification for which the certificate is to be awarded during July- 2019. 
@@ -91,44 +92,42 @@ if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && 
             </div>'
         );
     
-    }else if($document==4){
+    }else if($document==3){
         
     $startYear = $_POST['startYear'];
     $completionYear = $_POST['completionYear'];
-        if(empty($startYear)){
-            alert("Please enter the something in the searchbox");
-        }else{
+        
             $data .= (
                 
                 '<div>
-                    <p>MCE/Dean-SA/CC/'.$prevYear.'-'.$curYear.' Date: '.$date.'</p>
-                    <h1>Charecter Certificate</h1>
+                <pre><p>MCE/Dean-SA/CC/'.$curAcYear.'                                                  Date : '.$date.'</p></pre> 
+                <h1>Charecter Certificate</h1>
                     <p>This is to certify that Mr/Ms. <span>'.$name.'</span> bearing USN: <span>'.$usn.'</span> is a bonafide student of this institution and studied B.E. in <span>'.$branch.'</span> during the academic year '.$startYear.' to  '.$completionYear.'.</p>
                     <p>His/Her character and conduct were good, during the stay in this College.</p>
                 </div>'
             );
-        }
+        
 
-    }else if($document==5){
+    }else if($document==4){
         $curAcYear = $_POST['curAcYear'];
         $year = $_POST['year'];
         
         $data .= (
             
             '<div>
-                <p>MCE/Dean-SA/NOC/'.$prevYear.'-'.$curYear.' Date: '.$date.'</p>
+            <pre><p>MCE/Dean-SA/NOC/'.$curAcYear.'                                                  Date : '.$date.'</p></pre> 
                 <h1>No Objection Certificate</h1>
                 <p>This is to certify that Mr/Ms. <span>'.$name.'.</span> bearing USN: <span>'.$usn.'</span> was a bonafide student of this institution.  He/She was pursuing <span>'.$year.'</span> year B.E. in <span>'.$branch.'</span> during the Academic year <span>'.$curAcYear.'</span>.</p>
                 <p>His/her character and conduct are/were good, during his/her stay in this College.</p>
-                <p>This institution has No Objection to Mr. Varun G. for newly admission to '.$college.' </p>
+                <p>This institution has No Objection to Mr. '.$name.'for newly admission to '.$college.' </p>
             </div>'
         );
         
-    }else if($document==6){
+    }else if($document==5){
         $data .= (
             
             '<div>
-                <p>MCE/Dean-SA/EC/'.$prevYear.'-'.$curYear.' Date: '.$date.'</p>
+            <pre><p>MCE/Dean-SA/EC/'.$curAcYear.'                                                  Date : '.$date.'</p></pre> 
                 <h1>Expenditure Certificate</h1>
                 <p>This is to certify that Mr./Ms. <span>'.$name.'</span>  bearing USN: <span>'.$usn.'</span> bonafide student of this institution studying  <span>'.$sem.'</span> semester B.E in  <span>'.$branch.'</span> under aided/unaided/Government  seat/management seat  during <span>'.$curAcYear.'</span></p>
                 <p>The probable expenditure for his/her 4 years degree course will be.</p>
@@ -280,6 +279,43 @@ if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && 
         </div>'
         );
         
+    }else if($document==6){
+    $courseCompYear = $_POST['courseCompYear'];
+        // getting sem marks
+    $sem1 = $_POST['sem1'];
+    $sem2 = $_POST['sem2'];
+    $sem3 = $_POST['sem3'];
+    $sem4 = $_POST['sem4'];
+    $sem5 = $_POST['sem5'];
+    $sem6 = $_POST['sem6'];
+    $sem7 = $_POST['sem7'];
+    $sem8 = $_POST['sem8'];
+
+    // calculate cgpa
+
+    $sem1_perc = round((($sem1 - 0.75)*10),2);
+    $sem2_perc = round((($sem2 - 0.75)*10),2);
+    $sem3_perc = round((($sem3 - 0.75)*10),2);
+    $sem4_perc = round((($sem4 - 0.75)*10),2);
+    $sem5_perc = round((($sem5 - 0.75)*10),2);
+    $sem6_perc = round((($sem6 - 0.75)*10),2);
+    $sem7_perc = round((($sem7 - 0.75)*10),2);
+    $sem8_perc = round((($sem8 - 0.75)*10),2);
+    
+    // calculate cgpa
+
+    $cgpa =  round((($sem1 + $sem2 +$sem3 + $sem4 +$sem5 + $sem6 + $sem7 + $sem8)/8.0),2);
+    
+    // calculate cgpa
+    $perc = round(($cgpa-0.75*10),2);
+        $data .=(
+        '<div>  
+        <pre><p>MCE/Dean-SA/CCC/'.$curAcYear.'                                                  Date : '.$date.'</p></pre> 
+        <h1>Provisional Degree Certificate</h1>
+            <p>This is to certify that Mr/Ms <span>'.$name.'</span> has successfully completed Bachelor of Engineering degree in <span>'.$branch.'</span> in the year '.$courseCompYear.' with USN <span>'.$usn.'</span>  and he/she is eligible for the award of  degree. His/Her CGPA is <span>'.$cgpa.'</span> for the entire B.E programme. </p>
+            <p>His/Her character and conduct have been good during the stay in our college.</p>
+        </div>'
+        );
     }else if($document==7){
         // getting sem marks
     $sem1 = $_POST['sem1'];
@@ -309,45 +345,9 @@ if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && 
     // calculate cgpa
     $perc = round(($cgpa-0.75*10),2);
         $data .=(
-        '<div>
-            <p>MCE/Dean-SA/PDC/'.$prevYear.'-'.$curYear.' Date: '.$date.'</p>
-            <h1>Provisional Degree Certificate</h1>
-            <p>This is to certify that Mr/Ms '.$name.' has successfully completed Bachelor of Engineering degree in '.$branch.' in the year 2019 with USN '.$usn.'  and he/she is eligible for the award of  degree. Her CGPA is '.$cgpa.' for the entire B.E programme. </p>
-            <p>His/Her character and conduct have been good during the stay in our college.</p>
-        </div>'
-        );
-    }else if($document==8){
-        // getting sem marks
-    $sem1 = $_POST['sem1'];
-    $sem2 = $_POST['sem2'];
-    $sem3 = $_POST['sem3'];
-    $sem4 = $_POST['sem4'];
-    $sem5 = $_POST['sem5'];
-    $sem6 = $_POST['sem6'];
-    $sem7 = $_POST['sem7'];
-    $sem8 = $_POST['sem8'];
-
-    // calculate cgpa
-
-    $sem1_perc = round((($sem1 - 0.75)*10),2);
-    $sem2_perc = round((($sem2 - 0.75)*10),2);
-    $sem3_perc = round((($sem3 - 0.75)*10),2);
-    $sem4_perc = round((($sem4 - 0.75)*10),2);
-    $sem5_perc = round((($sem5 - 0.75)*10),2);
-    $sem6_perc = round((($sem6 - 0.75)*10),2);
-    $sem7_perc = round((($sem7 - 0.75)*10),2);
-    $sem8_perc = round((($sem8 - 0.75)*10),2);
-    
-    // calculate cgpa
-
-    $cgpa =  round((($sem1 + $sem2 +$sem3 + $sem4 +$sem5 + $sem6 + $sem7 + $sem8)/8.0),2);
-    
-    // calculate cgpa
-    $perc = round(($cgpa-0.75*10),2);
-        $data .=(
             '<div>
-                <p>MCE/Dean-SA/PDC/'.$prevYear.'-'.$curYear.' Date: '.$date.'</p>
-                <h1>Provisional Degree Certificate</h1>
+            <pre><p>MCE/Dean-SA/'.$curAcYear.'                                                  Date : '.$date.'</p></pre> 
+                <h1>TO WHOMSOEVER IT MAY CONCERN</h1>
                 <p>This is to certify that the CGPA scored by <span>'.$name.'</span> who has completed B.E. in <span>'.$branch.' </span> with  USN <span>'.$usn.'</span> from this Institution the equivalent percentage of marks for the CGPA earned in the below semester is as follows:-</p>
                 <table>
                     <tr>
