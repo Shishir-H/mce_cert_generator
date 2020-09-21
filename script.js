@@ -28,7 +28,7 @@ btn_sbt.onclick = ()=>{
 }
 doc.onchange =  display = ()=>{
     const doc = document.getElementById('doc').value;
-    if(doc==0 || doc==1){
+    if(doc==0 || doc==1 || doc==8){
         hide();
         btn_sbt.style.display = "block";
     }else if(doc==2){
@@ -52,8 +52,9 @@ doc.onchange =  display = ()=>{
         hide();
         // curAcYear.style.display = "block";
         // year.style.display = "block";
-        btn_sbt.style.display = "block";
 
+        college.style.display = "block";
+        btn_sbt.style.display = "block";
         curAcYear.required = true;
         year.required = true;
     }else if(doc==5){

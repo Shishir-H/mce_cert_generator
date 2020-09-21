@@ -17,7 +17,7 @@ $stylesheet = file_get_contents('./styles/pdf.css');
     $year = $_POST['year'];
 
     // Assigning documents to the value
-    $docArr = array("Study Certificate 1 ( General )", "Study Certificate 2 ( purpose for Bank loan renewal)", "Course completion Certificate","4)Character Certificate","No Objection Certificate","Expenditure Certificate","Provisional Degree Certificate","CGPA Calculation Certificate");
+    $docArr = array("Study Certificate 1 ( General )", "Study Certificate 2 ( purpose for Bank loan renewal)", "Course completion Certificate","Character Certificate","No Objection Certificate","Expenditure Certificate","Provisional Degree Certificate","CGPA Calculation Certificate","SSLC PUC possession Certificate");
 
     
 
@@ -51,7 +51,7 @@ if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && 
                 <p>This is to certify that Mr/Ms. <span>'.$name.'</span> bearing USN: <span>'.$usn.'</span> is a bonafide student of this institution.  He/She is eligible for '.$year.' year B.E. in <span>'.$branch.'</span> during the Academic year <span>'.$curAcYear.'</span></p>
                 <p>His/her character and conduct are/were good, during his/her stay in this College.</p>
             </div>');
-           echo $data;
+          
     }else if($document==1){
         $data .= (
             '<div>
@@ -402,6 +402,14 @@ if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && 
             </div>'
             );
         
+    }else if($document==8){
+        $data .= (
+            '<div>
+                <pre><p>MCE/Dean-SA/'.$curAcYear.'                                                  Date : '.$date.'</p></pre> 
+                <h1>TO WHOM SO EVER IT MAY CONCERN</h1>
+                <p>This is to certify that Mr/Ms. <span>'.$name.'</span> bearing USN: <span>'.$usn.'</span> is a bonafide student of this institution studying  '.$year.' year B.E in '.$branch.' during the academic year  '.$curAcYear.'. </span></p>
+                <p>He has submitted his original SSLC & PU Marks card to this college at the time of admission and the same was sent to Visvesvaraya Technological University, Belagavi, for verification. However the Copy of the original Marks Card is Attested.</p>
+            </div>');
     }
 
    

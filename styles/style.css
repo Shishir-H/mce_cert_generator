@@ -60,7 +60,9 @@ h3{
   padding: 20px;
 }
 
-.table .table-item{
+.table-item .table-item--reg{
+  text-align: center;
+  font-size: 1.5rem;
 }
 
 .table .table-item--head{
