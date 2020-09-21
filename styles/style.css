@@ -17,12 +17,12 @@
 h1{
   text-align: center;
 }
+
 h3{
   text-transform: capitalize;
   text-align: center;
   /* margin: 1rem 2rem;
   padding: 2rem; */
-
 }
 
 .form-control{
@@ -83,5 +83,14 @@ h3{
   }
 }
 
+#fullname{
+  text-transform: uppercase;
+}
 
+#CAP-USN{
+  text-transform: uppercase;
+}
 
+#Login-btn{
+  width: 100%;
+}
