@@ -5,9 +5,11 @@
 use PHPMailer\PHPMailer\Exception;
 use Mpdf\Mpdf;
 
+$SAVE_BASE = "../pdfs/";
+
 require_once __DIR__ . '/vendor/autoload.php';
 include './dbOps.php';
-$stylesheet = file_get_contents('./styles/pdf.css');
+$stylesheet = file_get_contents('../styles/pdf.css');
 
     $name = $_POST['name'];
     $usn = $_POST['usn'];
@@ -32,7 +34,7 @@ if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && 
     // Insert into DataBase
     $sql = new Mysql();
     $sql->dbConnect();
-    $sql->insertInto("student_details",[$name,$usn,$branch,$reqstdDoc,$date]);
+    // $sql->insertInto("student_details",[$name,$usn,$branch,$reqstdDoc,$date]);
    
     $college = $_POST['college'];
  
@@ -415,8 +417,12 @@ if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && 
    
     $mpdf->WriteHTML($stylesheet,1);
     $mpdf->WriteHtml($data);
+    $fileName = $name.'_'.$usn.'_'.$document.'.pdf';
+    // $fileUrl = "../pdfs/abc.pdf";
+    $mpdf->Output($SAVE_BASE.$fileName,'F');
+    // $mpdf->Output();
 
-    $mpdf->output();   
+    $sql->insertInto("student_details",[$name,$usn,$branch,$reqstdDoc,$date,$fileName]);
     
 
 }

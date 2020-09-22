@@ -55,7 +55,7 @@ h3{
   width: fit-content;
   height: auto;
   display: grid;
-  grid-template-columns: repeat(5,auto);
+  grid-template-columns: repeat(6,auto);
   grid-gap: 20px;
   padding: 20px;
 }
@@ -71,6 +71,9 @@ h3{
   font-size: 2rem;
   border-bottom: solid 0.2rem #171717a8;
   width: 100%;
+}
+.btn{
+  margin: 0;
 }
 /* Media-queries */
 
