@@ -9,6 +9,11 @@ const doc = document.getElementById('doc');
 const form = document.getElementById('form');
 const inSgpa = document.getElementById('inSgpa');
 const courseCompYear = document.getElementById('courseCompYear');
+
+form.onsubmit = ()=>{
+    alert("Thank you!\nYour application has been submitted")
+}
+
 const hide = ()=>{
     completionYear.style.display = "none";
     startYear.style.display = "none";
@@ -22,14 +27,15 @@ const hide = ()=>{
 }
 hide();
 
-btn_sbt.onclick = ()=>{
-    form.submit();
-    form.reset();
-}
+// btn_sbt.onclick = ()=>{
+//     form.submit();
+// }
 doc.onchange =  display = ()=>{
     const doc = document.getElementById('doc').value;
     if(doc==0 || doc==1 || doc==8){
         hide();
+        curAcYear.required = true;
+        year.required = true;
         btn_sbt.style.display = "block";
     }else if(doc==2){
         

@@ -11,12 +11,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 include './dbOps.php';
 $stylesheet = file_get_contents('../styles/pdf.css');
 
-    $name = $_POST['name'];
-    $usn = $_POST['usn'];
-    $branch = $_POST['branch'];
-    $document = $_POST['document'];
-    $curAcYear = $_POST['curAcYear'];
-    $year = $_POST['year'];
+    
 
     // Assigning documents to the value
     $docArr = array("Study Certificate 1 ( General )", "Study Certificate 2 ( purpose for Bank loan renewal)", "Course completion Certificate","Character Certificate","No Objection Certificate","Expenditure Certificate","Provisional Degree Certificate","CGPA Calculation Certificate","SSLC PUC possession Certificate");
@@ -25,6 +20,14 @@ $stylesheet = file_get_contents('../styles/pdf.css');
 
 if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && isset($_POST['document']) && isset($_POST['curAcYear']))
 {
+    $name = $_POST['name'];
+    $usn = $_POST['usn'];
+    $branch = $_POST['branch'];
+    $document = $_POST['document'];
+    $curAcYear = $_POST['curAcYear'];
+    $year = $_POST['year'];
+    $mailId = $_POST['mailId'];
+
     //to get current year
     $date = date("d/m/Y");
 
@@ -418,13 +421,38 @@ if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && 
     $mpdf->WriteHTML($stylesheet,1);
     $mpdf->WriteHtml($data);
     $fileName = $name.'_'.$usn.'_'.$document.'.pdf';
-    // $fileUrl = "../pdfs/abc.pdf";
     $mpdf->Output($SAVE_BASE.$fileName,'F');
-    // $mpdf->Output();
+
+
+
+        $msg = "Hi, '.$name.' thank you for using online portal.\nYour application for '.$reqstdDoc.' has been accepted and the same will be available soon";
+        $msg = $msg."\n\nRegards\n\nDev Team\nMCE Hassan";
+        $msg = wordwrap($msg,70);
+        
+        $headers = 'MIME-Version: 1.0';
+        $headers .= 'Content-type: text/html; charset=iso-8859-1';
+        $to = "$mailId";
+        $subject = "Regarding your application for '.$reqstdDoc.'";
+        $headers .= "From: webmaster@example.com\r\n";
+        mail($to,$subject,$msg,$headers);
+        echo '<script>alert("Thank you! Your apllication has been submitted")</script>';
+        
+        header("Location: ../");
 
     $sql->insertInto("student_details",[$name,$usn,$branch,$reqstdDoc,$date,$fileName]);
-    
 
+    // header("Location: ../");
+    // echo '<script>    window.alert("Thank You!\nYour application has been submitted");
+    // </script>';
+
+}
+if ($_POST['submit']) {
+   
+    if (mail ($to, $subject, $msg, $headers)) { 
+       $success = "Message successfully sent";
+    } else {
+        $success = "Message Sending Failed, try again";
+    }
 }
 
 ?>
