@@ -40,8 +40,8 @@
 
 	<?php
 
-		require_once 'db_connect.php';
-		// include './dbOps.php';
+		// require_once 'db_connect.php';
+		include './dbOps.php';
 
 
 		session_start();
@@ -53,8 +53,8 @@
 			$password = $_POST['password'];
 
 
-			// $sql = new Mysql();
-			// $con = $sql->dbConnect();
+			$sql = new Mysql();
+			$conn = $sql->dbConnect();
 			
 
 

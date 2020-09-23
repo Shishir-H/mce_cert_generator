@@ -40,7 +40,7 @@ class Mysql extends Dbconfig    {
                 $this -> hostName = NULL;
                 $this -> userName = NULL;
                 $this -> passCode = NULL;
-    }
+    }   
     
     function selectAll($tableName)  {
         $this -> sqlQuery = 'SELECT * FROM '.$this -> databaseName.'.'.$tableName;
@@ -88,7 +88,7 @@ class Mysql extends Dbconfig    {
     }
     
     function selectFreeRun($query)  {
-        $this -> dataSet = mysqli_query($query,$this -> connectionString);
+        $this -> dataSet = mysqli_query($this -> connectionString,$query);
         return $this -> dataSet;
     }
     

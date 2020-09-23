@@ -65,6 +65,10 @@ h3{
   font-size: 1.5rem;
 }
 
+.table-item--end{
+  grid-column: -1/-2;
+}
+
 .table .table-item--head{
   text-align: center;
   padding: 0.3rem;

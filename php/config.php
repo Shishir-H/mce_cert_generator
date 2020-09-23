@@ -11,7 +11,7 @@ class Dbconfig {
         $this -> serverName = 'localhost';
         $this -> userName = 'root';
         $this -> passCode = '';
-        $this -> dbName = 'student_info';
+        $this -> dbName = 'mce_cert';
     }
 }
 

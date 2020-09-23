@@ -4,33 +4,8 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="../styles/style.css">
 </head>
-<body onload="checkStatus()">
-
-<?php
-    include './dbOps.php';
-    
-    session_start();
-
-    if(!isset($_SESSION['email'])){
-        header("Location: login.php");
-        die();
-    }
-    
-    
-
-    $SAVE_BASE = "../pdfs/";
-
-    $sql = new Mysql();
-    $sql->dbConnect();
-    $res = $sql->selectAll("student_details");
-    $rows = mysqli_fetch_all($res) ;
-
-    
-
-        
-
-?>
-    <div class="header">
+<body>
+<div class="header">
         <img src="../assets/header.jpg" alt="header">
     </div>
     
@@ -41,29 +16,64 @@
     <div>
         <h3>List of students who have applied for certificates:-</h3>
     </div>
+    <table class="table table-striped table-responsive table-hover col-12" style="font-size: 15px">
+
+        <!-- <thead class="thead-dark"> -->
+            <tr>
+                <th scope="col-2">Name</th>
+                <th scope="col-2">USN</th>
+                <th scope="col-2">Branch</th>
+                <th scope="col-2">Email</th>
+                <th scope="col-2">Document</th>
+                <th scope="col-2">Date</th>
+                <th scope="col-2">File</th>
+                
+            </tr>
+        <!-- </thead> -->
 
 
-<div class="table">
-    <div class="table-item table-item--head">Name</div>
-    <div class="table-item table-item--head">USN</div>
-    <div class="table-item table-item--head">Branch</div>
-    <div class="table-item table-item--head">Document</div>
-    <div class="table-item table-item--head">Date</div>
-    <div class="table-item table-item--head">Action</div>
+<?php
+    require_once './dbOps.php';
     
-    <?php
-        foreach($rows as $key=>$row){
-             foreach($row as $key=>$value){ ?>
-                    <?php if($key==5){?>
-                        <a class="table-item table-item--reg btn btn-primary btn-sm" href="../pdfs/<?php echo $value?>" target="_blank" >Download</a>
-                        
-                        <?php } 
-                        else {?>
-                            <div class="table-item table-item--reg"><?php echo $value  ?></div>
-                        <?php } ?>
-            <?php }?>
-        <?php  }?>
-</div>
+    session_start();
+
+    if(!isset($_SESSION['email'])){
+        header("Location: login.php");
+        die();
+    }
+    
+    
+    
+
+    $sql = new Mysql();
+    $sql->dbConnect();
+    $res = $sql->selectAll("student_data");
+
+    while($row = mysqli_fetch_assoc($res)){
+
+        $Id = $row['id'];
+
+          echo ("
+
+                 <tr>
+                
+                    <td scope='col'>".$row["name"]."</td>
+                    
+                    <td scope='col'>".$row["usn"]."</td>
+                    <td scope='col'>".$row["branch"]."</td>
+                    <td scope='col'>".$row["email"]."</td>
+                    <td scope='col'>".$row["document_name"]."</td>
+                    <td scope='col'>".$row["date"]."</td>
+                    <td scope='col'><a class='btn btn-success btn-sm' href='makepdf.php?id=$row[id]'>Download</a></td>
+
+                </tr>
+
+            ");
+            
+
+    };
+    ?>
+    </table>
 
 </body>
 </html>
