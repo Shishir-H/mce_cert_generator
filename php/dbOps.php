@@ -93,7 +93,7 @@ class Mysql extends Dbconfig    {
     }
     
     function freeRun($query)    {
-        return mysqli_query($query,$this -> connectionString);
+        return mysqli_query($this -> connectionString,$query);
       }
     }
 ?>

@@ -29,6 +29,8 @@ if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && 
     $startYear = $_POST['startYear'];
     $completionYear = $_POST['completionYear'];
     $courseCompYear = $_POST['courseCompYear'];
+
+    $sem = $_POST['sem'];
     $sem1 = $_POST['sem1'];
     $sem2 = $_POST['sem2'];
     $sem3 = $_POST['sem3'];
@@ -50,17 +52,16 @@ if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && 
     $headers .= 'Content-type: text/html; charset=iso-8859-1';
     $to = "$mailId";
     $subject = "Regarding your application for '.$reqstdDoc.'";
-    $headers .= "From: webmaster@example.com\r\n";
-    mail($to,$subject,$msg,$headers);
-    echo '<script>alert("Thank you! Your apllication has been submitted")</script>';
+    $headers .= "From: someone@example.com\r\n";
+    // mail($to,$subject,$msg,$headers);
     
-    header("Location: ../");
 
     $sql->insertInto("student_data",['',$name,$usn,$mailId,$branch,$document,$reqstdDoc,$curAcYear,$courseCompYear,$year,$startYear,$completionYear,$sem,$college,$sem1,$sem2,$sem3,$sem4,$sem5,$sem6,$sem7,$sem8,$date]);
 
     header("Location: ../");
-    echo '<script>    window.alert("Thank You!\nYour application has been submitted");
-    </script>';
+    die();
+
+
 
 }
 

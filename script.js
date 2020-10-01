@@ -10,9 +10,11 @@ const form = document.getElementById('form');
 const inSgpa = document.getElementById('inSgpa');
 const courseCompYear = document.getElementById('courseCompYear');
 
-form.onsubmit = ()=>{
-    alert("Thank you!\nYour application has been submitted")
-}
+const alert = document.getElementById('alert');
+
+// form.onsubmit = ()=>{
+//     alert.style.display = "block";
+// }
 
 const hide = ()=>{
     completionYear.style.display = "none";
@@ -27,9 +29,6 @@ const hide = ()=>{
 }
 hide();
 
-// btn_sbt.onclick = ()=>{
-//     form.submit();
-// }
 doc.onchange =  display = ()=>{
     const doc = document.getElementById('doc').value;
     if(doc==0 || doc==1 || doc==8){
@@ -56,9 +55,6 @@ doc.onchange =  display = ()=>{
 
     }else if(doc==4){
         hide();
-        // curAcYear.style.display = "block";
-        // year.style.display = "block";
-
         college.style.display = "block";
         btn_sbt.style.display = "block";
         curAcYear.required = true;
@@ -76,7 +72,6 @@ doc.onchange =  display = ()=>{
     }
     else if(doc==7){
         year.style.display = "none";
-        // courseCompYear.style.display = "block";
         inSgpa.style.display = "block";
         btn_sbt.style.display = "block";
         
@@ -84,7 +79,3 @@ doc.onchange =  display = ()=>{
     }
   
       }
-
-
-
-// display();

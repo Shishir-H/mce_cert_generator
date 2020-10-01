@@ -44,20 +44,24 @@
 
         require_once __DIR__ . '/vendor/autoload.php';
         $stylesheet = file_get_contents('../styles/pdf.css');
+        
+$mpdf = new \Mpdf\Mpdf(['forcePortraitHeaders' => true]);
 
         $mpdf = new Mpdf(); 
 
-        $data = "";
+        $data = '<div style="height:1.7rem;"></div>';
 
         if($document == 0){
             
             $data .= (
-                '<div>
-                    <pre><p>MCE/Dean-SA/study Cer/'.$cur_ac_year.'                                                  Date : '.$date.'</p></pre> 
+                '
+                <div>
+                    <pre><p>MCE/Dean-SA/study Cer/'.$cur_ac_year.'                                                  Date : '.$date.'</p></pre></div> 
                     <h1>study certificate</h1>
                     <p>This is to certify that Mr/Ms. <span>'.$name.'</span> bearing USN: <span>'.$usn.'</span> is a bonafide student of this institution.  He/She is eligible for '.$year.' year B.E. in <span>'.$branch.'</span> during the Academic year <span>'.$curAcYear.'</span></p>
                     <p>His/her character and conduct are/were good, during his/her stay in this College.</p>
-                </div>');
+                </div>
+                ');
             
         }else if($document==1){
             $data .= (
@@ -287,17 +291,7 @@
             );
             
         }else if($document==6){
-        // $courseCompYear = $_POST['courseCompYear'];
-        //     // getting sem marks
-        // $sem1 = $_POST['sem1'];
-        // $sem2 = $_POST['sem2'];
-        // $sem3 = $_POST['sem3'];
-        // $sem4 = $_POST['sem4'];
-        // $sem5 = $_POST['sem5'];
-        // $sem6 = $_POST['sem6'];
-        // $sem7 = $_POST['sem7'];
-        // $sem8 = $_POST['sem8'];
-
+        
         // calculate cgpa
 
         $sem1_perc = round((($sem1 - 0.75)*10),2);
@@ -324,16 +318,7 @@
             </div>'
             );
         }else if($document==7){
-            // getting sem marks
-        // $sem1 = $_POST['sem1'];
-        // $sem2 = $_POST['sem2'];
-        // $sem3 = $_POST['sem3'];
-        // $sem4 = $_POST['sem4'];
-        // $sem5 = $_POST['sem5'];
-        // $sem6 = $_POST['sem6'];
-        // $sem7 = $_POST['sem7'];
-        // $sem8 = $_POST['sem8'];
-
+           
         // calculate cgpa
 
         $sem1_perc = round((($sem1 - 0.75)*10),2);
@@ -420,7 +405,7 @@
     }
     $mpdf->WriteHTML($stylesheet,1);
     $mpdf->WriteHtml($data);
-    $mpdf->Output();
+    $mpdf->Output($usn,"I");
 
 
     }
