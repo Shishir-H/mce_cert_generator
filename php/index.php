@@ -53,11 +53,11 @@ if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && 
     $to = "$mailId";
     $subject = "Regarding your application for '.$reqstdDoc.'";
     $headers .= "From: someone@example.com\r\n";
-    // mail($to,$subject,$msg,$headers);
+    mail($to,$subject,$msg,$headers);
     
 
     $sql->insertInto("student_data",['',$name,$usn,$mailId,$branch,$document,$reqstdDoc,$curAcYear,$courseCompYear,$year,$startYear,$completionYear,$sem,$college,$sem1,$sem2,$sem3,$sem4,$sem5,$sem6,$sem7,$sem8,$date]);
-
+    sleep(2);
     header("Location: ../");
     die();
 

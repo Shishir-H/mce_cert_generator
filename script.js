@@ -12,16 +12,14 @@ const courseCompYear = document.getElementById('courseCompYear');
 
 const alert = document.getElementById('alert');
 
-// form.onsubmit = ()=>{
-//     alert.style.display = "block";
-// }
+form.onsubmit = ()=>{
+    alert.style.display = "block";
+}
 
 const hide = ()=>{
     completionYear.style.display = "none";
     startYear.style.display = "none";
     sem.style.display = "none";
-    // curAcYear.style.display = "none";
-    // year.style.display = "none";
     college.style.display = "none";
     btn_sbt.style.display = "none";
     inSgpa.style.display = "none";
@@ -31,12 +29,12 @@ hide();
 
 doc.onchange =  display = ()=>{
     const doc = document.getElementById('doc').value;
-    if(doc==0 || doc==1 || doc==8){
+    if(doc==0 || doc==1 || doc==9){
         hide();
         curAcYear.required = true;
         year.required = true;
         btn_sbt.style.display = "block";
-    }else if(doc==2){
+    }else if(doc==3){
         
         completionYear.style.display = "block";
         startYear.style.display = "block";
@@ -45,7 +43,7 @@ doc.onchange =  display = ()=>{
 
         btn_sbt.style.display = "block";
         
-    }else if(doc==3){
+    }else if(doc==4  || doc==2){
       
         completionYear.style.display = "block";
         startYear.style.display = "block";
@@ -53,16 +51,16 @@ doc.onchange =  display = ()=>{
         startYear.required = true;
         completionYear.required = true;
 
-    }else if(doc==4){
+    }else if(doc==5){
         hide();
         college.style.display = "block";
         btn_sbt.style.display = "block";
         curAcYear.required = true;
         year.required = true;
-    }else if(doc==5){
+    }else if(doc==6){
         hide();
         btn_sbt.style.display = "block";
-    }else if(doc==6){
+    }else if(doc==7){
         year.style.display = "none";
         courseCompYear.style.display = "block";
         inSgpa.style.display = "block";
@@ -70,7 +68,7 @@ doc.onchange =  display = ()=>{
         
 
     }
-    else if(doc==7){
+    else if(doc==8){
         year.style.display = "none";
         inSgpa.style.display = "block";
         btn_sbt.style.display = "block";

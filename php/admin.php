@@ -14,13 +14,11 @@
         <form action ="./logout.php"> <button class="btn btn-primary pull-right btn-logout" type="submit" >Logout</button></form>
     </div>
    
-    <div>
-        <h3>List of students who have applied for certificates:-</h3>
-    </div>
-    <table class="table table-striped table-responsive table-hover col-12" style="font-size: 15px">
+    
+    <table class="table">
 
-        <!-- <thead class="thead-dark"> -->
-                <!-- <tr> -->
+        <thead class="thead-dark">
+                <tr>
                 <th scope="col-2">Name</th>
                 <th scope="col-2">USN</th>
                 <th scope="col-2">Branch</th>
@@ -28,8 +26,9 @@
                 <th scope="col-2">Document</th>
                 <th scope="col-2">Date</th>
                 <th scope="col-2">File</th>
-                <!-- </tr> -->
-        <!-- </thead> -->
+                <th scope="col-2">Status</th>
+                </tr>
+        </thead>
 
         <form method="post" action="">
 <?php
@@ -70,7 +69,8 @@
                     <td scope='col'>".$row["email"]."</td>
                     <td scope='col'>".$row["document_name"]."</td>
                     <td scope='col'>".$row["date"]."</td>
-                    <td scope='col'><a class='btn btn-success btn-sm' href='makepdf.php?id=$row[id]' target='_blank'>Download</a></td>
+                    <td scope='col'><a class='btn btn-success btn-sm btn-download' href='makepdf.php?id=$row[id]' target='_blank'>Download</a></td>
+                    <td scope='col'><input type='checkbox'></td>
 
                 </tr>
                 

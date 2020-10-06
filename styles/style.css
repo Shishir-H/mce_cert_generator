@@ -21,9 +21,7 @@ h1{
 h3{
   text-transform: capitalize;
   text-align: center;
-  /* margin: 1rem 2rem;
-  padding: 2rem; */
-}
+ }
 
 .form-control{
   margin-bottom: 1rem;
@@ -47,40 +45,20 @@ h3{
   width: 40%;
   margin: 2rem auto;
   overflow: hidden;
-
 }
 
-/* .table{
-  margin: 0 auto;
-  width: fit-content;
-  height: auto;
-  display: grid;
-  grid-template-columns: repeat(6,auto);
-  grid-gap: 20px;
-  padding: 20px;
-}  */
-/* 
-.table-item .table-item--reg{
-  text-align: center;
+
+td{
+  text-align: left;
+  padding: 8px;
+  }
+.table{
+  margin-top: 3rem;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
   font-size: 1.5rem;
 }
-
-.table-item--end{
-  grid-column: -1/-2;
-}
-
-.table .table-item--head{
-  text-align: center;
-  padding: 0.3rem;
-  font-size: 2rem;
-  border-bottom: solid 0.2rem #171717a8;
-  width: 100%;
-}  */
-.table{
-  margin: 4rem auto;
-
-}
-
 .pagination{
   margin-left: 2rem;
 }

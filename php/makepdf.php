@@ -51,14 +51,14 @@ $mpdf = new \Mpdf\Mpdf(['forcePortraitHeaders' => true]);
 
         $data = '<div style="height:1.7rem;"></div>';
 
-        if($document == 0){
+        if($document == 0 || $document == 2){
             
             $data .= (
                 '
                 <div>
                     <pre><p>MCE/Dean-SA/study Cer/'.$cur_ac_year.'                                                  Date : '.$date.'</p></pre></div> 
                     <h1>study certificate</h1>
-                    <p>This is to certify that Mr/Ms. <span>'.$name.'</span> bearing USN: <span>'.$usn.'</span> is a bonafide student of this institution.  He/She is eligible for '.$year.' year B.E. in <span>'.$branch.'</span> during the Academic year <span>'.$curAcYear.'</span></p>
+                    <p>This is to certify that Mr/Ms. <span>'.$name.'</span> bearing USN: <span>'.$usn.'</span> is a bonafide student of this institution.  He/She is eligible for '.$year.' year B.E. in <span>'.$branch.'</span> during the Academic year <span>'.$cur_ac_year.'</span></p>
                     <p>His/her character and conduct are/were good, during his/her stay in this College.</p>
                 </div>
                 ');
@@ -66,9 +66,9 @@ $mpdf = new \Mpdf\Mpdf(['forcePortraitHeaders' => true]);
         }else if($document==1){
             $data .= (
                 '<div>
-                <pre><p>MCE/Dean-SA/study Cer/'.$curAcYear.'                                                  Date : '.$date.'</p></pre> 
+                <pre><p>MCE/Dean-SA/study Cer/'.$cur_ac_year.'                                                  Date : '.$date.'</p></pre> 
                 <h1>STUDY CERTIFICATE FOR LOAN</h1>
-                    <p>This is to certify that Mr/Ms. <span>'.$name.'</span>  bearing USN: <span>'.$usn.'</span> is a bonafide student of this institution.  He/She is eligible for '.$year.' year B.E. in <span>'.$branch.'</span> during the Academic year <span>'.$curAcYear.'</span></p>
+                    <p>This is to certify that Mr/Ms. <span>'.$name.'</span>  bearing USN: <span>'.$usn.'</span> is a bonafide student of this institution.  He/She is eligible for '.$year.' year B.E. in <span>'.$branch.'</span> during the Academic year <span>'.$cur_ac_year.'</span></p>
                     <p>He/She has to pay the fee details as follows.</p>
                     <table class = "table">
                 
@@ -88,7 +88,7 @@ $mpdf = new \Mpdf\Mpdf(['forcePortraitHeaders' => true]);
                     <p>His/her character and conduct are/were good, during his/her stay in this College.</p>
                 </div>');
 
-        }else if($document ==2){
+        }else if($document ==3){
         // $startYear = $_POST['startYear'];
         // $completionYear = $_POST['completionYear'];
         
@@ -103,7 +103,7 @@ $mpdf = new \Mpdf\Mpdf(['forcePortraitHeaders' => true]);
                 </div>'
             );
         
-        }else if($document==3){
+        }else if($document==4){
             
         // $startYear = $_POST['startYear'];
         // $completionYear = $_POST['completionYear'];
@@ -119,8 +119,8 @@ $mpdf = new \Mpdf\Mpdf(['forcePortraitHeaders' => true]);
                 );
             
 
-        }else if($document==4){
-            // $curAcYear = $_POST['curAcYear'];
+        }else if($document==5){
+            // $cur_ac_year = $_POST['cur$cur_ac_year'];
             // $year = $_POST['year'];
             
             $data .= (
@@ -128,19 +128,19 @@ $mpdf = new \Mpdf\Mpdf(['forcePortraitHeaders' => true]);
                 '<div>
                 <pre><p>MCE/Dean-SA/NOC/'.$cur_ac_year.'                                                  Date : '.$date.'</p></pre> 
                     <h1>No Objection Certificate</h1>
-                    <p>This is to certify that Mr/Ms. <span>'.$name.'.</span> bearing USN: <span>'.$usn.'</span> was a bonafide student of this institution.  He/She was pursuing <span>'.$year.'</span> year B.E. in <span>'.$branch.'</span> during the Academic year <span>'.$curAcYear.'</span>.</p>
+                    <p>This is to certify that Mr/Ms. <span>'.$name.'.</span> bearing USN: <span>'.$usn.'</span> was a bonafide student of this institution.  He/She was pursuing <span>'.$year.'</span> year B.E. in <span>'.$branch.'</span> during the Academic year <span>'.$cur_ac_year.'</span>.</p>
                     <p>His/her character and conduct are/were good, during his/her stay in this College.</p>
                     <p>This institution has No Objection to Mr. '.$name.'for newly admission to '.$college.' </p>
                 </div>'
             );
             
-        }else if($document==5){
+        }else if($document==6){
             $data .= (
                 
                 '<div>
                 <pre><p>MCE/Dean-SA/EC/'.$cur_ac_year.'                                                  Date : '.$date.'</p></pre> 
                     <h1>Expenditure Certificate</h1>
-                    <p>This is to certify that Mr./Ms. <span>'.$name.'</span>  bearing USN: <span>'.$usn.'</span> bonafide student of this institution studying  <span>'.$sem.'</span> semester B.E in  <span>'.$branch.'</span> under aided/unaided/Government  seat/management seat  during <span>'.$curAcYear.'</span></p>
+                    <p>This is to certify that Mr./Ms. <span>'.$name.'</span>  bearing USN: <span>'.$usn.'</span> bonafide student of this institution studying  <span>'.$sem.'</span> semester B.E in  <span>'.$branch.'</span> under aided/unaided/Government  seat/management seat  during <span>'.$cur_ac_year.'</span></p>
                     <p>The probable expenditure for his/her 4 years degree course will be.</p>
                     <table class = "table">
                     <tr>
@@ -290,7 +290,7 @@ $mpdf = new \Mpdf\Mpdf(['forcePortraitHeaders' => true]);
             </div>'
             );
             
-        }else if($document==6){
+        }else if($document==7){
         
         // calculate cgpa
 
@@ -317,7 +317,7 @@ $mpdf = new \Mpdf\Mpdf(['forcePortraitHeaders' => true]);
                 <p>His/Her character and conduct have been good during the stay in our college.</p>
             </div>'
             );
-        }else if($document==7){
+        }else if($document==8){
            
         // calculate cgpa
 
@@ -394,12 +394,12 @@ $mpdf = new \Mpdf\Mpdf(['forcePortraitHeaders' => true]);
                 </div>'
                 );
             
-        }else if($document==8){
+        }else if($document==9){
             $data .= (
                 '<div>
                     <pre><p>MCE/Dean-SA/'.$cur_ac_year.'                                                  Date : '.$date.'</p></pre> 
                     <h1>TO WHOM SO EVER IT MAY CONCERN</h1>
-                    <p>This is to certify that Mr/Ms. <span>'.$name.'</span> bearing USN: <span>'.$usn.'</span> is a bonafide student of this institution studying  '.$year.' year B.E in '.$branch.' during the academic year  '.$curAcYear.'. </span></p>
+                    <p>This is to certify that Mr/Ms. <span>'.$name.'</span> bearing USN: <span>'.$usn.'</span> is a bonafide student of this institution studying  '.$year.' year B.E in '.$branch.' during the academic year  '.$cur_ac_year.'. </span></p>
                     <p>He has submitted his original SSLC & PU Marks card to this college at the time of admission and the same was sent to Visvesvaraya Technological University, Belagavi, for verification. However the Copy of the original Marks Card is Attested.</p>
                 </div>');
     }
