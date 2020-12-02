@@ -47,7 +47,9 @@ h3{
   overflow: hidden;
 }
 
-
+.alert{
+  display: none;
+}
 td{
   text-align: left;
   padding: 8px;
@@ -72,8 +74,9 @@ td{
 .btn-generate{
   margin-right:10rem;
 }
-.alert{
-  display: none;
+
+.btn-download:visited{
+  background-color: rgb(71,180,96);
 }
 
 #fullname{

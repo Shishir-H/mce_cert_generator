@@ -15,6 +15,11 @@ const alert = document.getElementById('alert');
 form.onsubmit = ()=>{
     alert.style.display = "block";
 }
+// if( sessionStorage.getItem("is_success")){
+//     submitSuccess();
+// }
+
+
 
 const hide = ()=>{
     completionYear.style.display = "none";

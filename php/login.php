@@ -66,8 +66,8 @@
 				$_SESSION['email'] = $row['username'];
 				header("Location: admin.php");
 			}else{
-				echo("<div class='alert alert-danger mt-3 text-center'>Invalid Email/Password</div>");
-			}
+        echo("<div class='alert alert-danger mt-3 text-center'>Invalid Email/Password</div>");
+        			}
 
 		}
 

@@ -39,7 +39,6 @@
             $sem7 = $row['sem7'];
             $sem8 = $row['sem8'];
         }
-        // echo $document;
         // creating pdf
 
         require_once __DIR__ . '/vendor/autoload.php';
@@ -49,7 +48,7 @@ $mpdf = new \Mpdf\Mpdf(['forcePortraitHeaders' => true]);
 
         $mpdf = new Mpdf(); 
 
-        $data = '<div style="height:1.7rem;"></div>';
+        $data = '<div style="height:3rem;"></div>';
 
         if($document == 0 || $document == 2){
             
@@ -97,7 +96,7 @@ $mpdf = new \Mpdf\Mpdf(['forcePortraitHeaders' => true]);
                 '<div>
                 <pre><p>MCE/Dean-SA/CCC/'.$cur_ac_year.'                                                  Date : '.$date.'</p></pre> 
                     <h1>COURSE COMPLETION CERTIFICATE</h1>
-                    <p>This is to certify that Mr/Ms. <span>'.$name.'</span> bearing USN: <span>'.$usn.'</span> is a bonafide student of this institution and studied B.E. in <span>'.$branch.'</span> during the academic year <span>'.$startYear.' to  '.$completionYear.'</span>.</p>
+                    <p>This is to certify that Mr/Ms. <span>'.$name.'</span> bearing USN: <span>'.$usn.'</span> is a bonafide student of this institution and studied B.E. in <span>'.$branch.'</span> during the academic year <span>'.$start_year.'</span> to <span> '.$completion_year.'</span>.</p>
                     <p>He/She has completed his/her four years Programme.  He/She has successfully fulfilled the course requirements and has attained the qualification for which the certificate is to be awarded during July- 2019. 
                     <br>His / Her character and conduct have been good during his / her stay in the college.</p>
                 </div>'
@@ -113,15 +112,14 @@ $mpdf = new \Mpdf\Mpdf(['forcePortraitHeaders' => true]);
                     '<div>
                     <pre><p>MCE/Dean-SA/CC/'.$cur_ac_year.'                                                  Date : '.$date.'</p></pre> 
                     <h1>Charecter Certificate</h1>
-                        <p>This is to certify that Mr/Ms. <span>'.$name.'</span> bearing USN: <span>'.$usn.'</span> is a bonafide student of this institution and studied B.E. in <span>'.$branch.'</span> during the academic year '.$startYear.' to  '.$completionYear.'.</p>
+                        <p>This is to certify that Mr/Ms. <span>'.$name.'</span> bearing USN: <span>'.$usn.'</span> is a bonafide student of this institution and studied B.E. in <span>'.$branch.'</span> during the academic year <span>'.$start_year.'</span> to  <span>'.$completion_year.'</span>.</p>
                         <p>His/Her character and conduct were good, during the stay in this College.</p>
                     </div>'
                 );
             
 
         }else if($document==5){
-            // $cur_ac_year = $_POST['cur$cur_ac_year'];
-            // $year = $_POST['year'];
+            
             
             $data .= (
                 
@@ -130,7 +128,7 @@ $mpdf = new \Mpdf\Mpdf(['forcePortraitHeaders' => true]);
                     <h1>No Objection Certificate</h1>
                     <p>This is to certify that Mr/Ms. <span>'.$name.'.</span> bearing USN: <span>'.$usn.'</span> was a bonafide student of this institution.  He/She was pursuing <span>'.$year.'</span> year B.E. in <span>'.$branch.'</span> during the Academic year <span>'.$cur_ac_year.'</span>.</p>
                     <p>His/her character and conduct are/were good, during his/her stay in this College.</p>
-                    <p>This institution has No Objection to Mr. '.$name.'for newly admission to '.$college.' </p>
+                    <p>This institution has No Objection to <span>Mr. '.$name.'</span> for newly admission to <span>'.$college.'</span> </p>
                 </div>'
             );
             
@@ -399,7 +397,7 @@ $mpdf = new \Mpdf\Mpdf(['forcePortraitHeaders' => true]);
                 '<div>
                     <pre><p>MCE/Dean-SA/'.$cur_ac_year.'                                                  Date : '.$date.'</p></pre> 
                     <h1>TO WHOM SO EVER IT MAY CONCERN</h1>
-                    <p>This is to certify that Mr/Ms. <span>'.$name.'</span> bearing USN: <span>'.$usn.'</span> is a bonafide student of this institution studying  '.$year.' year B.E in '.$branch.' during the academic year  '.$cur_ac_year.'. </span></p>
+                    <p>This is to certify that Mr/Ms. <span>'.$name.'</span> bearing USN: <span>'.$usn.'</span> is a bonafide student of this institution studying  <span>'.$year.'</span> year <span>B.E</span> in <span>'.$branch.'</span> during the academic year  <span>'.$cur_ac_year.'. </span></p>
                     <p>He has submitted his original SSLC & PU Marks card to this college at the time of admission and the same was sent to Visvesvaraya Technological University, Belagavi, for verification. However the Copy of the original Marks Card is Attested.</p>
                 </div>');
     }

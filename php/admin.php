@@ -26,7 +26,6 @@
                 <th scope="col-2">Document</th>
                 <th scope="col-2">Date</th>
                 <th scope="col-2">File</th>
-                <th scope="col-2">Status</th>
                 </tr>
         </thead>
 
@@ -52,7 +51,7 @@
 
     $sql = new Mysql();
     $sql->dbConnect();
-    $res = $sql->freeRun("SELECT * FROM student_data LIMIT $start_from, $limit ");
+    $res = $sql->freeRun("SELECT * FROM student_data  ORDER BY id DESC LIMIT $start_from, $limit");
 
     while($row = mysqli_fetch_assoc($res)){
 
@@ -63,15 +62,12 @@
                  <tr>
                 
                     <td scope='col'>".$row["name"]."</td>
-                    
                     <td scope='col'>".$row["usn"]."</td>
                     <td scope='col'>".$row["branch"]."</td>
                     <td scope='col'>".$row["email"]."</td>
                     <td scope='col'>".$row["document_name"]."</td>
                     <td scope='col'>".$row["date"]."</td>
-                    <td scope='col'><a class='btn btn-success btn-sm btn-download' href='makepdf.php?id=$row[id]' target='_blank'>Download</a></td>
-                    <td scope='col'><input type='checkbox'></td>
-
+                    <td scope='col'><a class='btn btn-danger btn-sm btn-download' href='makepdf.php?id=$row[id]' target='_blank'>Download</a></td>
                 </tr>
                 
                 
