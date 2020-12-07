@@ -12,6 +12,16 @@ const courseCompYear = document.getElementById('courseCompYear');
 
 const alert = document.getElementById('alert');
 
+const sem1 = document.getElementById('sem1');
+const sem2 = document.getElementById('sem2');
+const sem3 = document.getElementById('sem3');
+const sem4 = document.getElementById('sem4');
+const sem5 = document.getElementById('sem5');
+const sem6 = document.getElementById('sem6');
+const sem7 = document.getElementById('sem7');
+const sem8 = document.getElementById('sem8');
+
+
 form.onsubmit = ()=>{
     alert.style.display = "block";
 }
@@ -66,10 +76,20 @@ doc.onchange =  display = ()=>{
         hide();
         btn_sbt.style.display = "block";
     }else if(doc==7){
-        year.style.display = "none";
         courseCompYear.style.display = "block";
         inSgpa.style.display = "block";
         btn_sbt.style.display = "block";
+        
+        courseCompYear.required = true;
+        curAcYear.required = true;
+        sem1.required = true;
+        sem2.required = true;
+        sem3.required = true;
+        sem4.required = true;
+        sem5.required = true;
+        sem6.required = true;
+        sem7.required = true;
+        sem8.required = true;
         
 
     }
@@ -77,6 +97,15 @@ doc.onchange =  display = ()=>{
         year.style.display = "none";
         inSgpa.style.display = "block";
         btn_sbt.style.display = "block";
+        
+        sem1.required = true;
+        sem2.required = true;
+        sem3.required = true;
+        sem4.required = true;
+        sem5.required = true;
+        sem6.required = true;
+        sem7.required = true;
+        sem8.required = true;
         
 
     }

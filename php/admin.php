@@ -68,6 +68,7 @@
                     <td scope='col'>".$row["document_name"]."</td>
                     <td scope='col'>".$row["date"]."</td>
                     <td scope='col'><a class='btn btn-danger btn-sm btn-download' href='makepdf.php?id=$row[id]' target='_blank'>Download</a></td>
+                    <td scope='col'><a class='btn btn-danger btn-sm btn-download' href='./edit.php?id=$row[id]' target='_blank'>Edit</a></td>
                 </tr>
                 
                 

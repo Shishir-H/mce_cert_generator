@@ -13,7 +13,6 @@
         $sql->dbConnect();
 
 
-
         $res = $sql->selectFreeRun($query);
         while ($row = $res->fetch_assoc()) {
             $id = $row['id'];
@@ -40,7 +39,7 @@
             $sem8 = $row['sem8'];
         }
         // creating pdf
-
+        echo $cou_comp_year;
         require_once __DIR__ . '/vendor/autoload.php';
         $stylesheet = file_get_contents('../styles/pdf.css');
         
@@ -311,7 +310,7 @@ $mpdf = new \Mpdf\Mpdf(['forcePortraitHeaders' => true]);
             '<div>  
             <pre><p>MCE/Dean-SA/CCC/'.$cur_ac_year.'                                                  Date : '.$date.'</p></pre> 
             <h1>Provisional Degree Certificate</h1>
-                <p>This is to certify that Mr/Ms <span>'.$name.'</span> has successfully completed Bachelor of Engineering degree in <span>'.$branch.'</span> in the year '.$courseCompYear.' with USN <span>'.$usn.'</span>  and he/she is eligible for the award of  degree. His/Her CGPA is <span>'.$cgpa.'</span> for the entire B.E programme. </p>
+                <p>This is to certify that Mr/Ms <span>'.$name.'</span> has successfully completed Bachelor of Engineering degree in <span>'.$branch.'</span> in the year '.$cou_comp_year.' with USN <span>'.$usn.'</span>  and he/she is eligible for the award of  degree. His/Her CGPA is <span>'.$cgpa.'</span> for the entire B.E programme. </p>
                 <p>His/Her character and conduct have been good during the stay in our college.</p>
             </div>'
             );
