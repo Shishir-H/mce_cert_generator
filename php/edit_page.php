@@ -87,7 +87,6 @@
               <option value="9">SSLC PUC possession Certificate</option>
             
           </select>
-          <input  style="display:none;" type="number" placeholder="Number of semesters completed" name="total_sem" class="form-control" id="totalSem">
           <input type="text" placeholder="Current Academic Year Ex. 2019-20" name="curAcYear" class="form-control" id="curAcYear" pattern="^[1-9][0-9]{3}-[0-9]{2}$" value ="<?php echo  $cur_ac_year ?>">
           <input type="text" placeholder="Course Completion Year" name="courseCompYear" class="form-control" id="courseCompYear" value ="<?php echo  $cou_comp_year ?>">
           <input type="text" placeholder="Year Ex. 1st,2nd,3rd,4th" name="year" class="form-control" id="year" pattern="^(1st|2nd|3rd|4th)$" value ="<?php echo  $year ?>">
@@ -96,6 +95,7 @@
           <input type="text" placeholder="Semester" name="sem" class="form-control" id="sem" value ="<?php echo  $sem ?>">
           <input type="text" placeholder="College You want to be admitted" name="college" class="form-control" id="college" value ="<?php echo  $college ?>">
           <div class="semCgpa" id="inSgpa">
+            <input type="number" placeholder="Number of semesters completed" name="total_sem" class="form-control" id="totalSem" required>
             <input type="text" placeholder="SGPA in SEM 1" name="sem1" class="form-control" id="sem1" value ="<?php echo  $sem1 ?>">
             <input type="text" placeholder="SGPA in SEM 2" name="sem2" class="form-control" id="sem2" value ="<?php echo  $sem2 ?>">
             <input type="text" placeholder="SGPA in SEM 3" name="sem3" class="form-control" id="sem3" value ="<?php echo  $sem3 ?>">

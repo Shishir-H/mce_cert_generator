@@ -10,7 +10,7 @@ const courseCompYear = document.getElementById('courseCompYear');
 
 const loan_table = document.getElementById('loan_table');
 const expenditure_table = document.getElementById('expenditure_table');
-const total_sem = document.getElementById('total_sem');
+const total_sem = document.getElementById('totalSem');
 console.log(doc.value);
 
 
@@ -19,11 +19,8 @@ if(doc.value==1){
     college.style.display = "none";
     courseCompYear.style.display="none";
     loan_table.style.display = "block";
-    // total_sem.style.display = "none";
 }else if(doc.value==6){
     expenditure_table.style.display = "block";
-}
-else if(doc.value==8 || doc.value==7){
+}else if(doc.value==8 || doc.value==7){
     inSgpa.style.display = "block";
-    total_sem.style.display = "block";
 }
