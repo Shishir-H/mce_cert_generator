@@ -10,7 +10,6 @@ const courseCompYear = document.getElementById('courseCompYear');
 
 const loan_table = document.getElementById('loan_table');
 const expenditure_table = document.getElementById('expenditure_table');
-const total_sem = document.getElementById('totalSem');
 console.log(doc.value);
 
 

@@ -121,8 +121,8 @@
                         </tr>
                     </table>
     </div>
-    <div>
-<table class = "table" style = "display:none;  align:center;margin-left:auto;margin-right:auto;" id="expenditure_table">
+    <div id="expenditure_table" style = "display:none;">
+<table class = "table" style = "align:center;margin-left:auto;margin-right:auto;" id="expenditure_table">
                         <tr>
                             <th>Particulars</th>
                             <th>I Yr.</th>
@@ -189,7 +189,10 @@
                             <td><input type="text" class="form-control" value="60650.00" name="tot_fee4"></input></td>
                             <td><input type="text" class="form-control" value="257260.00" name="grand_tot_fee"></input></td>
                         </tr>
-                    </table>   
+                    </table>
+                    <label for="total">Grand total in words:</label>
+                    <input type="text" placeholder="Grand total in words" name="gt_in_words" class="form-control" id="" value ="Two lakh fifty seven thousand two hundred and sixty only">
+
     </div>
     <button  class="btn btn-success" type="submit" name="update" id="btn_sbt">Download</button>
 

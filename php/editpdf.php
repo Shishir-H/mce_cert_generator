@@ -171,6 +171,8 @@ if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && 
                 $tot_fee3 = $_POST['tot_fee3'];
                 $tot_fee4 = $_POST['tot_fee4'];
 
+                $gt_in_words = $_POST['gt_in_words'];
+
                 $grand_tot_fee = $_POST['grand_tot_fee'];
 
 
@@ -251,7 +253,7 @@ if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && 
                             <td><span>'.$grand_tot_fee.'<span></td>
                         </tr>
                     </table>       
-                    <p><span>Rs: '.$grand_tot_fee.'</span> (Rs Two lakh fifty seven thousand two hundred and sixty only) <br>He/She bears good character and conduct.</p>
+                    <p><span>Rs: '.$grand_tot_fee.'</span> (Rs '.$gt_in_words.') <br>He/She bears good character and conduct.</p>
                     <p><span>Note</span></p>
                     <p style = "font-size: 14px;">1) Issue the D D for Corpus Fund In the Favor Of Malnad Technical Education Society ®, Hassan, <br>
                     2) issue the D D for Tuition fee in the favour of Principal, Malnad College of Engineering, Hassan.
