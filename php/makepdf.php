@@ -28,7 +28,7 @@
             $completion_year = $row['completion_year'];
             $sem = $row['sem'];
             $college = $row['college'];
-            $date = $row['date'];
+            // $date = $row['date'];
             $sem1 = $row['sem1'];
             $sem2 = $row['sem2'];
             $sem3 = $row['sem3'];
@@ -48,6 +48,7 @@ $mpdf = new \Mpdf\Mpdf(['forcePortraitHeaders' => true]);
         $mpdf = new Mpdf(); 
 
         $data = '<div style="height:3rem;"></div>';
+        $date = date("d/m/Y");
 
         if($document == 0 || $document == 2){
             
@@ -132,264 +133,265 @@ $mpdf = new \Mpdf\Mpdf(['forcePortraitHeaders' => true]);
             );
             
         }else if($document==6){
-            $data .= (
+            $fee=$_POST['fee'];
+            //$data .= (
                 
-                '<div>
-                <pre><p>MCE/Dean-SA/EC/'.$cur_ac_year.'                                                  Date : '.$date.'</p></pre> 
-                    <h1>Expenditure Certificate</h1>
-                    <p>This is to certify that Mr./Ms. <span>'.$name.'</span>  bearing USN: <span>'.$usn.'</span> bonafide student of this institution studying  <span>'.$sem.'</span> semester B.E in  <span>'.$branch.'</span> under aided/unaided/Government  seat/management seat  during <span>'.$cur_ac_year.'</span></p>
-                    <p>The probable expenditure for his/her 4 years degree course will be.</p>
-                    <table class = "table">
-                    <tr>
-                        <th>Particulars</th>
-                        <th>I Yr.</th>
-                        <th>II Yr.</th>
-                        <th>III Yr.</th>
-                        <th>III IV Yr.</th>
-                        <th>Grand Total.</th>
-                    </tr>
-                    <tr>
-                        <td>Tuition fee</td>
-                        <td>15,000</td>
-                        <td>15,000</td>
-                        <td>15,000</td>
-                        <td>15,000</td>
-                    </tr>
-                        <tr>
-                        <td>Other Fee (Exam Fee +University Reg Fee+Other University Fee</td>
-                        <td>7,310</td>
-                        <td>4,650</td>
-                        <td>4,650</td>
-                        <td>4,650</td>
-                        </tr>
-                    <tr>
-                        <td>MTES (R) Corpus Fund (Tentative)</td>
-                        <td>18,000</td>
-                        <td>16,000</td>
-                        <td>16,000</td>
-                        <td>16,000</td>
-                    </tr>
-                    <tr>
-                        <td>Books</td>
-                        <td>10,000</td>
-                        <td>10,000</td>
-                        <td>10,000</td>
-                        <td>10,000</td>
-                    </tr>
-                    <tr>
-                        <td>Drawing Board, Drafter, Calculator & Accessories</td>
-                        <td>10,000</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>Computer / Laptop</td>
-                        <td>45,000</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>Project</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>15,000</td>
-                    </tr>
-                    <tr>
-                        <td><span>Total<span></td>
-                        <td><span>1,05,310.00<span></td>
-                        <td><span>45,650.00<span></td>
-                        <td><span>45,650.00<span></td>
-                        <td><span>60,650.00<span></td>
-                        <td><span>2,57,260.00<span></td>
-                    </tr>
-                </table>       
-                <p><span>Rs: 2,57,260</span> (Rs Two lakh fifty seven thousand two hundred and sixty only) <br>He/She bears good character and conduct.</p>
-                <p><span>Note</span></p>
-                <p style = "font-size: 14px;">1) Issue the D D for Corpus Fund In the Favor Of Malnad Technical Education Society ®, Hassan, <br>
-                2) issue the D D for Tuition fee in the favour of Principal, Malnad College of Engineering, Hassan.
-                </p>
-                <pagebreak>
-                <table class = "table">
-                    <tr>
-                        <th>Particulars</th>
-                        <th>I Yr.</th>
-                        <th>II Yr.</th>
-                        <th>III Yr.</th>
-                        <th>III IV Yr.</th>
-                        <th>Grand Total.</th>
-                    </tr>
-                    <tr>
-                        <td>Tuition fee</td>
-                        <td>75,000</td>
-                        <td>75,000</td>
-                        <td>75,000</td>
-                        <td>75,000</td>
-                    </tr>
-                        <tr>
-                        <td>Other Fee (Exam Fee +University Reg Fee+Other University Fee</td>
-                        <td>0.00</td>
-                        <td>0.00</td>
-                        <td>0.00</td>
-                        <td>0.00</td>
-                        </tr>
-                    <tr>
-                        <td>MTES (R) Corpus Fund (Tentative)</td>
-                        <td>0.00</td>
-                        <td>0.00</td>
-                        <td>0.00</td>
-                        <td>0.00</td>
-                    </tr>
-                    <tr>
-                        <td>Books</td>
-                        <td>10,000</td>
-                        <td>10,000</td>
-                        <td>10,000</td>
-                        <td>10,000</td>
-                    </tr>
-                    <tr>
-                        <td>Drawing Board, Drafter, Calculator & Accessories</td>
-                        <td>10,000</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>Computer / Laptop</td>
-                        <td>45,000</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>Project</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>15,000</td>
-                    </tr>
-                    <tr>
-                        <td><span>Total<span></td>
-                        <td><span>1,40,000.00<span></td>
-                        <td><span>85,000.00<span></td>
-                        <td><span>85,000.00<span></td>
-                        <td><span>1,00,000.00<span></td>
-                        <td><span>4,10,000.00<span></td>
-                    </tr>
-                </table>
-                <p><span>Rs: 4,10,000</span> (Rs Four lakh ten thousand only)<br>He/She bears good character and conduct.</p>
-                <p><span>Note</span></p>
-                <p style = "font-size: 14px;">1) Issue the D D for Corpus Fund In the Favor Of Malnad Technical Education Society ®, Hassan, <br>
-                2) issue the D D for Tuition fee in the favour of Principal, Malnad College of Engineering, Hassan.
-                </p>
-            </div>'
-            );
+            //     '<div>
+            //     <pre><p>MCE/Dean-SA/EC/'.$cur_ac_year.'                                                  Date : '.$date.'</p></pre> 
+            //         <h1>Expenditure Certificate</h1>
+            //         <p>This is to certify that Mr./Ms. <span>'.$name.'</span>  bearing USN: <span>'.$usn.'</span> bonafide student of this institution studying  <span>'.$sem.'</span> semester B.E in  <span>'.$branch.'</span> under aided/unaided/Government  seat/management seat  during <span>'.$cur_ac_year.'</span></p>
+            //         <p>The probable expenditure for his/her 4 years degree course will be.</p>
+            //         <table class = "table">
+            //         <tr>
+            //             <th>Particulars</th>
+            //             <th>I Yr.</th>
+            //             <th>II Yr.</th>
+            //             <th>III Yr.</th>
+            //             <th>III IV Yr.</th>
+            //             <th>Grand Total.</th>
+            //         </tr>
+            //         <tr>
+            //             <td>Tuition fee</td>
+            //             <td>15,000</td>
+            //             <td>15,000</td>
+            //             <td>15,000</td>
+            //             <td>15,000</td>
+            //         </tr>
+            //             <tr>
+            //             <td>Other Fee (Exam Fee +University Reg Fee+Other University Fee</td>
+            //             <td>7,310</td>
+            //             <td>4,650</td>
+            //             <td>4,650</td>
+            //             <td>4,650</td>
+            //             </tr>
+            //         <tr>
+            //             <td>MTES (R) Corpus Fund (Tentative)</td>
+            //             <td>18,000</td>
+            //             <td>16,000</td>
+            //             <td>16,000</td>
+            //             <td>16,000</td>
+            //         </tr>
+            //         <tr>
+            //             <td>Books</td>
+            //             <td>10,000</td>
+            //             <td>10,000</td>
+            //             <td>10,000</td>
+            //             <td>10,000</td>
+            //         </tr>
+            //         <tr>
+            //             <td>Drawing Board, Drafter, Calculator & Accessories</td>
+            //             <td>10,000</td>
+            //             <td>0</td>
+            //             <td>0</td>
+            //             <td>0</td>
+            //         </tr>
+            //         <tr>
+            //             <td>Computer / Laptop</td>
+            //             <td>45,000</td>
+            //             <td>0</td>
+            //             <td>0</td>
+            //             <td>0</td>
+            //         </tr>
+            //         <tr>
+            //             <td>Project</td>
+            //             <td>0</td>
+            //             <td>0</td>
+            //             <td>0</td>
+            //             <td>15,000</td>
+            //         </tr>
+            //         <tr>
+            //             <td><span>Total<span></td>
+            //             <td><span>1,05,310.00<span></td>
+            //             <td><span>45,650.00<span></td>
+            //             <td><span>45,650.00<span></td>
+            //             <td><span>60,650.00<span></td>
+            //             <td><span>2,57,260.00<span></td>
+            //         </tr>
+            //     </table>       
+            //     <p><span>Rs: 2,57,260</span> (Rs Two lakh fifty seven thousand two hundred and sixty only) <br>He/She bears good character and conduct.</p>
+            //     <p><span>Note</span></p>
+            //     <p style = "font-size: 14px;">1) Issue the D D for Corpus Fund In the Favor Of Malnad Technical Education Society ®, Hassan, <br>
+            //     2) issue the D D for Tuition fee in the favour of Principal, Malnad College of Engineering, Hassan.
+            //     </p>
+            //     <pagebreak>
+            //     <table class = "table">
+            //         <tr>
+            //             <th>Particulars</th>
+            //             <th>I Yr.</th>
+            //             <th>II Yr.</th>
+            //             <th>III Yr.</th>
+            //             <th>III IV Yr.</th>
+            //             <th>Grand Total.</th>
+            //         </tr>
+            //         <tr>
+            //             <td>Tuition fee</td>
+            //             <td>75,000</td>
+            //             <td>75,000</td>
+            //             <td>75,000</td>
+            //             <td>75,000</td>
+            //         </tr>
+            //             <tr>
+            //             <td>Other Fee (Exam Fee +University Reg Fee+Other University Fee</td>
+            //             <td>0.00</td>
+            //             <td>0.00</td>
+            //             <td>0.00</td>
+            //             <td>0.00</td>
+            //             </tr>
+            //         <tr>
+            //             <td>MTES (R) Corpus Fund (Tentative)</td>
+            //             <td>0.00</td>
+            //             <td>0.00</td>
+            //             <td>0.00</td>
+            //             <td>0.00</td>
+            //         </tr>
+            //         <tr>
+            //             <td>Books</td>
+            //             <td>10,000</td>
+            //             <td>10,000</td>
+            //             <td>10,000</td>
+            //             <td>10,000</td>
+            //         </tr>
+            //         <tr>
+            //             <td>Drawing Board, Drafter, Calculator & Accessories</td>
+            //             <td>10,000</td>
+            //             <td>0</td>
+            //             <td>0</td>
+            //             <td>0</td>
+            //         </tr>
+            //         <tr>
+            //             <td>Computer / Laptop</td>
+            //             <td>45,000</td>
+            //             <td>0</td>
+            //             <td>0</td>
+            //             <td>0</td>
+            //         </tr>
+            //         <tr>
+            //             <td>Project</td>
+            //             <td>0</td>
+            //             <td>0</td>
+            //             <td>0</td>
+            //             <td>15,000</td>
+            //         </tr>
+            //         <tr>
+            //             <td><span>Total<span></td>
+            //             <td><span>1,40,000.00<span></td>
+            //             <td><span>85,000.00<span></td>
+            //             <td><span>85,000.00<span></td>
+            //             <td><span>1,00,000.00<span></td>
+            //             <td><span>4,10,000.00<span></td>
+            //         </tr>
+            //     </table>
+            //     <p><span>Rs: 4,10,000</span> (Rs Four lakh ten thousand only)<br>He/She bears good character and conduct.</p>
+            //     <p><span>Note</span></p>
+            //     <p style = "font-size: 14px;">1) Issue the D D for Corpus Fund In the Favor Of Malnad Technical Education Society ®, Hassan, <br>
+            //     2) issue the D D for Tuition fee in the favour of Principal, Malnad College of Engineering, Hassan.
+            //     </p>
+            // </div>'
+           // );
             
         }else if($document==7){
         
-        // calculate cgpa
+        // // calculate cgpa
 
-        $sem1_perc = round((($sem1 - 0.75)*10),2);
-        $sem2_perc = round((($sem2 - 0.75)*10),2);
-        $sem3_perc = round((($sem3 - 0.75)*10),2);
-        $sem4_perc = round((($sem4 - 0.75)*10),2);
-        $sem5_perc = round((($sem5 - 0.75)*10),2);
-        $sem6_perc = round((($sem6 - 0.75)*10),2);
-        $sem7_perc = round((($sem7 - 0.75)*10),2);
-        $sem8_perc = round((($sem8 - 0.75)*10),2);
+        // $sem1_perc = round((($sem1 - 0.75)*10),2);
+        // $sem2_perc = round((($sem2 - 0.75)*10),2);
+        // $sem3_perc = round((($sem3 - 0.75)*10),2);
+        // $sem4_perc = round((($sem4 - 0.75)*10),2);
+        // $sem5_perc = round((($sem5 - 0.75)*10),2);
+        // $sem6_perc = round((($sem6 - 0.75)*10),2);
+        // $sem7_perc = round((($sem7 - 0.75)*10),2);
+        // $sem8_perc = round((($sem8 - 0.75)*10),2);
         
-        // calculate cgpa
+        // // calculate cgpa
 
-        $cgpa =  round((($sem1 + $sem2 +$sem3 + $sem4 +$sem5 + $sem6 + $sem7 + $sem8)/8.0),2);
+        // $cgpa =  round((($sem1 + $sem2 +$sem3 + $sem4 +$sem5 + $sem6 + $sem7 + $sem8)/8.0),2);
         
-        // calculate cgpa
-        $perc = round(($cgpa-0.75*10),2);
-            $data .=(
-            '<div>  
-            <pre><p>MCE/Dean-SA/CCC/'.$cur_ac_year.'                                                  Date : '.$date.'</p></pre> 
-            <h1>Provisional Degree Certificate</h1>
-                <p>This is to certify that Mr/Ms <span>'.$name.'</span> has successfully completed Bachelor of Engineering degree in <span>'.$branch.'</span> in the year '.$cou_comp_year.' with USN <span>'.$usn.'</span>  and he/she is eligible for the award of  degree. His/Her CGPA is <span>'.$cgpa.'</span> for the entire B.E programme. </p>
-                <p>His/Her character and conduct have been good during the stay in our college.</p>
-            </div>'
-            );
+        // // calculate cgpa
+        // $perc = round(($cgpa-0.75*10),2);
+        //     $data .=(
+        //     '<div>  
+        //     <pre><p>MCE/Dean-SA/CCC/'.$cur_ac_year.'                                                  Date : '.$date.'</p></pre> 
+        //     <h1>Provisional Degree Certificate</h1>
+        //         <p>This is to certify that Mr/Ms <span>'.$name.'</span> has successfully completed Bachelor of Engineering degree in <span>'.$branch.'</span> in the year '.$cou_comp_year.' with USN <span>'.$usn.'</span>  and he/she is eligible for the award of  degree. His/Her CGPA is <span>'.$cgpa.'</span> for the entire B.E programme. </p>
+        //         <p>His/Her character and conduct have been good during the stay in our college.</p>
+        //     </div>'
+        //     );
         }else if($document==8){
            
-        // calculate cgpa
+        // // calculate cgpa
 
-        $sem1_perc = round((($sem1 - 0.75)*10),2);
-        $sem2_perc = round((($sem2 - 0.75)*10),2);
-        $sem3_perc = round((($sem3 - 0.75)*10),2);
-        $sem4_perc = round((($sem4 - 0.75)*10),2);
-        $sem5_perc = round((($sem5 - 0.75)*10),2);
-        $sem6_perc = round((($sem6 - 0.75)*10),2);
-        $sem7_perc = round((($sem7 - 0.75)*10),2);
-        $sem8_perc = round((($sem8 - 0.75)*10),2);
+        // $sem1_perc = round((($sem1 - 0.75)*10),2);
+        // $sem2_perc = round((($sem2 - 0.75)*10),2);
+        // $sem3_perc = round((($sem3 - 0.75)*10),2);
+        // $sem4_perc = round((($sem4 - 0.75)*10),2);
+        // $sem5_perc = round((($sem5 - 0.75)*10),2);
+        // $sem6_perc = round((($sem6 - 0.75)*10),2);
+        // $sem7_perc = round((($sem7 - 0.75)*10),2);
+        // $sem8_perc = round((($sem8 - 0.75)*10),2);
         
-        // calculate cgpa
+        // // calculate cgpa
 
-        $cgpa =  round((($sem1 + $sem2 +$sem3 + $sem4 +$sem5 + $sem6 + $sem7 + $sem8)/8.0),2);
+        // $cgpa =  round((($sem1 + $sem2 +$sem3 + $sem4 +$sem5 + $sem6 + $sem7 + $sem8)/8.0),2);
         
-        // calculate cgpa
-        $perc = round(($cgpa-0.75*10),2);
-            $data .=(
-                '<div>
-                <pre><p>MCE/Dean-SA/'.$cur_ac_year.'                                                  Date : '.$date.'</p></pre> 
-                    <h1>TO WHOMSOEVER IT MAY CONCERN</h1>
-                    <p>This is to certify that the CGPA scored by <span>'.$name.'</span> who has completed B.E. in <span>'.$branch.' </span> with  USN <span>'.$usn.'</span> from this Institution the equivalent percentage of marks for the CGPA earned in the below semester is as follows:-</p>
-                    <table>
-                        <tr>
-                            <th>Semester</th>
-                            <th>CGPA</th>
-                            <th>CGPA Percentage</th>
-                        </tr>
-                        <tr>
-                            <td>I</td>
-                            <td>'.$sem1.'</td>
-                            <td>'.$sem1_perc.'</td>
-                        </tr>
-                        <tr>
-                            <td>II</td>
-                            <td>'.$sem2.'</td>
-                            <td>'.$sem2_perc.'</td>
-                        </tr>
-                        <tr>
-                            <td>III</td>
-                            <td>'.$sem3.'</td>
-                            <td>'.$sem3_perc.'</td>
-                        </tr>
-                        <tr>
-                            <td>IV</td>
-                            <td>'.$sem4.'</td>
-                            <td>'.$sem4_perc.'</td>
-                        </tr>
-                        <tr>
-                            <td>V</td>
-                            <td>'.$sem5.'</td>
-                            <td>'.$sem5_perc.'</td>
-                        </tr>
-                        <tr>
-                            <td>VI</td>
-                            <td>'.$sem6.'</td>
-                            <td>'.$sem6_perc.'</td>
-                        </tr>
-                        <tr>
-                            <td>VII</td>
-                            <td>'.$sem7.'</td>
-                            <td>'.$sem7_perc.'</td>
-                        </tr>
-                        <tr>
-                            <td>VIII</td>
-                            <td>'.$sem8.'</td>
-                            <td>'.$sem8_perc.'</td>
-                        </tr>
-                    </table>
-                    <p style = "text-align:center;"><span>Percentage =(CGPA-0.75	)x10</span></p>
+        // // calculate cgpa
+        // $perc = round(($cgpa-0.75*10),2);
+        //     $data .=(
+        //         '<div>
+        //         <pre><p>MCE/Dean-SA/'.$cur_ac_year.'                                                  Date : '.$date.'</p></pre> 
+        //             <h1>TO WHOMSOEVER IT MAY CONCERN</h1>
+        //             <p>This is to certify that the CGPA scored by <span>'.$name.'</span> who has completed B.E. in <span>'.$branch.' </span> with  USN <span>'.$usn.'</span> from this Institution the equivalent percentage of marks for the CGPA earned in the below semester is as follows:-</p>
+        //             <table>
+        //                 <tr>
+        //                     <th>Semester</th>
+        //                     <th>CGPA</th>
+        //                     <th>CGPA Percentage</th>
+        //                 </tr>
+        //                 <tr>
+        //                     <td>I</td>
+        //                     <td>'.$sem1.'</td>
+        //                     <td>'.$sem1_perc.'</td>
+        //                 </tr>
+        //                 <tr>
+        //                     <td>II</td>
+        //                     <td>'.$sem2.'</td>
+        //                     <td>'.$sem2_perc.'</td>
+        //                 </tr>
+        //                 <tr>
+        //                     <td>III</td>
+        //                     <td>'.$sem3.'</td>
+        //                     <td>'.$sem3_perc.'</td>
+        //                 </tr>
+        //                 <tr>
+        //                     <td>IV</td>
+        //                     <td>'.$sem4.'</td>
+        //                     <td>'.$sem4_perc.'</td>
+        //                 </tr>
+        //                 <tr>
+        //                     <td>V</td>
+        //                     <td>'.$sem5.'</td>
+        //                     <td>'.$sem5_perc.'</td>
+        //                 </tr>
+        //                 <tr>
+        //                     <td>VI</td>
+        //                     <td>'.$sem6.'</td>
+        //                     <td>'.$sem6_perc.'</td>
+        //                 </tr>
+        //                 <tr>
+        //                     <td>VII</td>
+        //                     <td>'.$sem7.'</td>
+        //                     <td>'.$sem7_perc.'</td>
+        //                 </tr>
+        //                 <tr>
+        //                     <td>VIII</td>
+        //                     <td>'.$sem8.'</td>
+        //                     <td>'.$sem8_perc.'</td>
+        //                 </tr>
+        //             </table>
+        //             <p style = "text-align:center;"><span>Percentage =(CGPA-0.75	)x10</span></p>
                     
     
-                </div>'
-                );
+        //         </div>'
+        //         );
             
         }else if($document==9){
             $data .= (

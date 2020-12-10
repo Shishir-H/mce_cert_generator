@@ -25,9 +25,6 @@ const sem8 = document.getElementById('sem8');
 form.onsubmit = ()=>{
     alert.style.display = "block";
 }
-// if( sessionStorage.getItem("is_success")){
-//     submitSuccess();
-// }
 
 
 
@@ -36,8 +33,7 @@ const hide = ()=>{
     startYear.style.display = "none";
     sem.style.display = "none";
     college.style.display = "none";
-    btn_sbt.style.display = "none";
-    inSgpa.style.display = "none";
+
     courseCompYear.style.display = "none";
 }
 hide();
@@ -77,37 +73,17 @@ doc.onchange =  display = ()=>{
         btn_sbt.style.display = "block";
     }else if(doc==7){
         courseCompYear.style.display = "block";
-        inSgpa.style.display = "block";
+        // inSgpa.style.display = "block";
         btn_sbt.style.display = "block";
-        
+        year.style.display = "block";
         courseCompYear.required = true;
-        curAcYear.required = true;
-        sem1.required = true;
-        sem2.required = true;
-        sem3.required = true;
-        sem4.required = true;
-        sem5.required = true;
-        sem6.required = true;
-        sem7.required = true;
-        sem8.required = true;
-        
+        curAcYear.required = true; 
 
     }
     else if(doc==8){
         year.style.display = "none";
-        inSgpa.style.display = "block";
+        // inSgpa.style.display = "block";
         btn_sbt.style.display = "block";
-        
-        sem1.required = true;
-        sem2.required = true;
-        sem3.required = true;
-        sem4.required = true;
-        sem5.required = true;
-        sem6.required = true;
-        sem7.required = true;
-        sem8.required = true;
-        
-
     }
   
       }

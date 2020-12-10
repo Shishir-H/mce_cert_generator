@@ -75,10 +75,7 @@ td{
   margin-right:10rem;
 }
 
-.btn-download:visited{
-  background-color: rgb(71,180,96);
-  border: none;
-}
+
 
 #fullname{
   text-transform: uppercase;

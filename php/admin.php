@@ -67,8 +67,8 @@
                     <td scope='col'>".$row["email"]."</td>
                     <td scope='col'>".$row["document_name"]."</td>
                     <td scope='col'>".$row["date"]."</td>
-                    <td scope='col'><a class='btn btn-danger btn-sm btn-download' href='makepdf.php?id=$row[id]' target='_blank'>Download</a></td>
-                    <td scope='col'><a class='btn btn-danger btn-sm btn-download' href='./edit.php?id=$row[id]' target='_blank'>Edit</a></td>
+                    <td scope='col'><a class='btn btn-primary btn-sm btn-download' href='makepdf.php?id=$row[id]' target='_blank'>View</a></td>
+                    <td scope='col'><a class='btn btn-primary btn-sm btn-download' href='./edit_page.php?id=$row[id]' target='_blank'>Edit</a></td>
                 </tr>
                 
                 
