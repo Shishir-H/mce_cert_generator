@@ -12,14 +12,15 @@ const courseCompYear = document.getElementById('courseCompYear');
 
 const alert = document.getElementById('alert');
 
-const sem1 = document.getElementById('sem1');
-const sem2 = document.getElementById('sem2');
-const sem3 = document.getElementById('sem3');
-const sem4 = document.getElementById('sem4');
-const sem5 = document.getElementById('sem5');
-const sem6 = document.getElementById('sem6');
-const sem7 = document.getElementById('sem7');
-const sem8 = document.getElementById('sem8');
+// const sem1 = document.getElementById('sem1');
+// const sem2 = document.getElementById('sem2');
+// const sem3 = document.getElementById('sem3');
+// const sem4 = document.getElementById('sem4');
+// const sem5 = document.getElementById('sem5');
+// const sem6 = document.getElementById('sem6');
+// const sem7 = document.getElementById('sem7');
+// const sem8 = document.getElementById('sem8');
+const exp_cert_year = document.getElementById('exp_cert_year');
 
 
 form.onsubmit = ()=>{
@@ -64,25 +65,34 @@ doc.onchange =  display = ()=>{
 
     }else if(doc==5){
         hide();
-        college.style.display = "block";
         btn_sbt.style.display = "block";
+        startYear.style.display="block";
+        startYear.required =true;
         curAcYear.required = true;
         year.required = true;
     }else if(doc==6){
         hide();
+        college.style.display = "block";
         btn_sbt.style.display = "block";
+        college.required = true;
+        curAcYear.required = true;
+        // year.required = true;
     }else if(doc==7){
+        hide();
+        btn_sbt.style.display = "block";
+    }else if(doc==8){
+        year.style.display ="none";
+        year.required =false;
+    }else if(doc==9){
         courseCompYear.style.display = "block";
-        // inSgpa.style.display = "block";
         btn_sbt.style.display = "block";
         year.style.display = "block";
         courseCompYear.required = true;
         curAcYear.required = true; 
 
     }
-    else if(doc==8){
+    else if(doc==10){
         year.style.display = "none";
-        // inSgpa.style.display = "block";
         btn_sbt.style.display = "block";
     }
   

@@ -5,7 +5,7 @@ require_once ('./dbOps.php');
     
 
 //  Assigning documents to the value
-$docArr = array("Study Certificate 1 ( General )", "Study Certificate 2 ( purpose for Bank loan renewal)", "Study Certificate ( for passed-out students )", "Course completion Certificate","Character Certificate","No Objection Certificate","Expenditure Certificate","Provisional Degree Certificate","CGPA Calculation Certificate","SSLC PUC possession Certificate");
+$docArr = array("Study Certificate 1 ( General )", "Study Certificate 2 ( purpose for Bank loan renewal)","Study Certificate  ( For passed out students)", "Course completion Certificate","Character Certificate","No Objection Certificate ( General )","No Objection Certificate ( For admission to particular college )","Expenditure Certificate","Provisional Degree Certificate","CGPA Calculation Certificate","SSLC PUC possession Certificate");
 
     
 
