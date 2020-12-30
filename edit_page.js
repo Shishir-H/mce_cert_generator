@@ -49,6 +49,7 @@ if(doc.value==0){
     courseCompYear.style.display = "none";
 }else if(doc.value==7){
     expenditure_table.style.display = "block";
+    gt_in_words.required = "true";
     hide();
 
 }else if(doc.value==8){

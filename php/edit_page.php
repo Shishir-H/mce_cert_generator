@@ -111,15 +111,15 @@
                      <table class = "table">
                         <tr>
                             <td>Tuition fee </td>
-                            <td><input type="text" placeholder="Tuition Fee" name="tuition_fee" class="form-control" value="55310.00"></input></td>
+                            <td><input type="text" placeholder="Tuition Fee" name="tuition_fee" class="form-control" value=""></input></td>
                         </tr>
                         <tr>
                             <td>Other fee</td>
-                            <td><input type="text" placeholder="Other Fee" name="other_fee" class="form-control" value="4310.00"></input></td>
+                            <td><input type="text" placeholder="Other Fee" name="other_fee" class="form-control" value=""></input></td>
                         </tr>
                         <tr>
                             <td>MTES (R) Corpus Fund (Tentative)</td>
-                            <td><input type="text" placeholder="Corpus Fund" name="corpus_fund" class="form-control" value="15000.00"></input></td>
+                            <td><input type="text" placeholder="Corpus Fund" name="corpus_fund" class="form-control" value=""></input></td>
                         </tr>
                     </table>
     </div>
@@ -193,7 +193,7 @@
                         </tr>
                     </table>
                     <label for="total">Grand total in words:</label>
-                    <input type="text" placeholder="Grand total in words" name="gt_in_words" class="form-control" id="gt_in_words" onclick="getTotal();" >
+                    <input type="text" placeholder="Grand total in words" name="gt_in_words" class="form-control" id="gt_in_words" onclick="getTotal();">
 
     </div>
         <button  class="btn btn-success" type="submit" name="download" id="btn_sbt">Download</button>

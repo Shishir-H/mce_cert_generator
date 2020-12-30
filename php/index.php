@@ -30,15 +30,15 @@ if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && 
     $completionYear = $_POST['completionYear'];
     $courseCompYear = $_POST['courseCompYear'];
 
-    $sem = $_POST['sem'];
-    $sem1 = $_POST['sem1'];
-    $sem2 = $_POST['sem2'];
-    $sem3 = $_POST['sem3'];
-    $sem4 = $_POST['sem4'];
-    $sem5 = $_POST['sem5'];
-    $sem6 = $_POST['sem6'];
-    $sem7 = $_POST['sem7'];
-    $sem8 = $_POST['sem8'];
+    // $sem = $_POST['sem'];
+    // $sem1 = $_POST['sem1'];
+    // $sem2 = $_POST['sem2'];
+    // $sem3 = $_POST['sem3'];
+    // $sem4 = $_POST['sem4'];
+    // $sem5 = $_POST['sem5'];
+    // $sem6 = $_POST['sem6'];
+    // $sem7 = $_POST['sem7'];
+    // $sem8 = $_POST['sem8'];
 
     $sql = new Mysql();
     $sql->dbConnect();
