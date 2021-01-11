@@ -89,7 +89,7 @@ if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && 
                             <h1>COURSE COMPLETION CERTIFICATE</h1>
                             <p>This is to certify that Mr/Ms. <span>'.$name.'</span> bearing USN: <span>'.$usn.'</span> is a bonafide student of this institution and studied B.E. in <span>'.$branch.'</span> during the academic year <span>'.$start_year.'</span> to <span> '.$completion_year.'</span>.</p>
                             <p>He/She has completed his/her four years Programme.  He/She has successfully fulfilled the course requirements and has attained the qualification for which the certificate is to be awarded during <span>'.$deg_awarde_on.'</span>. 
-                            <br>His / Her character and conduct have been good during his / her stay in the college.</p>
+                            <br><br>His / Her character and conduct have been good during his / her stay in the college.</p>
                         </div>'
                     );
     
@@ -102,7 +102,7 @@ if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && 
                     
                     '<div>
                     <pre><p>MCE/Dean-SA/CC/'.$cur_ac_year.'                                                  Date : '.$date.'</p></pre> 
-                    <h1>Charecter Certificate</h1>
+                    <h1>Character Certificate</h1>
                         <p>This is to certify that Mr/Ms. <span>'.$name.'</span> bearing USN: <span>'.$usn.'</span> is a bonafide student of this institution and studied B.E. in <span>'.$branch.'</span> during the academic year <span>'.$start_year.'</span> to  <span>'.$completion_year.'</span>.</p>
                         <p>His/Her character and conduct were good, during the stay in this College.</p>
                     </div>'
@@ -500,32 +500,33 @@ if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && 
                 }
             }else if($document==8){
                 $cou_comp_year = $_POST['courseCompYear'];
+                $cgpa = $_POST['cgpa'];
 
-                $sem1 = $_POST['sem1'];
-                $sem2 = $_POST['sem2'];
-                $sem3 = $_POST['sem3'];
-                $sem4 = $_POST['sem4'];
-                $sem5 = $_POST['sem5'];
-                $sem6 = $_POST['sem6'];
-                $sem7 = $_POST['sem7'];
-                $sem8 = $_POST['sem8'];
-                // calculate cgpa
+                // $sem1 = $_POST['sem1'];
+                // $sem2 = $_POST['sem2'];
+                // $sem3 = $_POST['sem3'];
+                // $sem4 = $_POST['sem4'];
+                // $sem5 = $_POST['sem5'];
+                // $sem6 = $_POST['sem6'];
+                // $sem7 = $_POST['sem7'];
+                // $sem8 = $_POST['sem8'];
+                // // calculate cgpa
         
-                $sem1_perc = round((($sem1 - 0.75)*10),2);
-                $sem2_perc = round((($sem2 - 0.75)*10),2);
-                $sem3_perc = round((($sem3 - 0.75)*10),2);
-                $sem4_perc = round((($sem4 - 0.75)*10),2);
-                $sem5_perc = round((($sem5 - 0.75)*10),2);
-                $sem6_perc = round((($sem6 - 0.75)*10),2);
-                $sem7_perc = round((($sem7 - 0.75)*10),2);
-                $sem8_perc = round((($sem8 - 0.75)*10),2);
+                // $sem1_perc = round((($sem1 - 0.75)*10),2);
+                // $sem2_perc = round((($sem2 - 0.75)*10),2);
+                // $sem3_perc = round((($sem3 - 0.75)*10),2);
+                // $sem4_perc = round((($sem4 - 0.75)*10),2);
+                // $sem5_perc = round((($sem5 - 0.75)*10),2);
+                // $sem6_perc = round((($sem6 - 0.75)*10),2);
+                // $sem7_perc = round((($sem7 - 0.75)*10),2);
+                // $sem8_perc = round((($sem8 - 0.75)*10),2);
                 
-                // calculate cgpa
+                // // calculate cgpa
         
-                $cgpa =  round((($sem1 + $sem2 +$sem3 + $sem4 +$sem5 + $sem6 + $sem7 + $sem8)/8.0),2);
+                // $cgpa =  round((($sem1 + $sem2 +$sem3 + $sem4 +$sem5 + $sem6 + $sem7 + $sem8)/8.0),2);
                 
-                // calculate cgpa
-                $perc = round(($cgpa-0.75*10),2);
+                // // calculate cgpa
+                // $perc = round(($cgpa-0.75*10),2);
                     $data .=(
                     '<div>  
                     <pre><p>MCE/Dean-SA/CCC/'.$cur_ac_year.'                                                  Date : '.$date.'</p></pre> 

@@ -95,7 +95,7 @@
           <input type="text" placeholder="To Academic Year ex : 2021-22" name="completionYear" class="form-control" id="completionYear" pattern="^[1-9][0-9]{3}-[0-9]{2}$" value ="<?php echo  $completion_year ?>">
           <input type="text" placeholder="Semester" name="sem" class="form-control" id="sem" value ="<?php echo  $sem ?>">
           <input type="text" placeholder="College You want to be admitted" name="college" class="form-control" id="college" value ="<?php echo  $college ?>">
-          <input type="text" style="display:none;" placeholder="Degree certificate awarded or will be awarded on ex-July-2019 " name="degree_awarded_on" class="form-control" id="deg_awarded_on">
+          <input type="text" style="display:none;" placeholder="Degree certificate awarded or will be awarded on ex 2019 " name="degree_awarded_on" class="form-control" id="deg_awarded_on">
           <div class="semCgpa" id="inSgpa">
             <input type="number" placeholder="Number of semesters completed" name="total_sem" class="form-control" id="totalSem">
             <input type="text" placeholder="SGPA in SEM 1" name="sem1" class="form-control" id="sem1" value ="<?php echo  $sem1 ?>">
@@ -107,6 +107,7 @@
             <input type="text" placeholder="SGPA in SEM 7" name="sem7" class="form-control" id="sem7" value ="<?php echo  $sem7 ?>">
             <input type="text" placeholder="SGPA in SEM 8" name="sem8" class="form-control" id="sem8" value ="<?php echo  $sem8 ?>">
           </div>
+          <input type="text" placeholder="Enter CGPA" class="form-control" id="cgpa" name="cgpa" >
         <div style = "display:none;  align:center;margin-left:auto;margin-right:auto;" id="loan_table">
                      <table class = "table">
                         <tr>

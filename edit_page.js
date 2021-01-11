@@ -8,6 +8,7 @@ const doc = document.getElementById('doc');
 const inSgpa = document.getElementById('inSgpa');
 const courseCompYear = document.getElementById('courseCompYear');
 const total_sem = document.getElementById('total_sem');
+const cgpa = document.getElementById('cgpa');
 
 const deg_awarded_on = document.getElementById('deg_awarded_on');
 
@@ -56,7 +57,7 @@ if(doc.value==0){
     hide();
     courseCompYear.style.display = "block";
     year.style.display = "none";
-    inSgpa.style.display = "block";
+    cgpa.style.display = "block";
 }else if(doc.value==9){
     hide();
     inSgpa.style.display = "block";
@@ -135,7 +136,9 @@ const getTotal=()=>{
 }
 
 if(year.value=='2nd'){
-   tut_fee1.disabled = true;
+   tut_fee1.value = true;
+   tut_fee1.value = '-';
+
    tut_fee3.disabled = true;
    tut_fee4.disabled = true;
    
