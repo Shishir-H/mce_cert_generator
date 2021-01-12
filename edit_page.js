@@ -24,6 +24,7 @@ const hide=()=>{
     sem.style.display ="none";
     college.style.display ="none";
     courseCompYear.style.display ="none";
+    cgpa.style.display ="none";
 }
 if(doc.value==0){
     hide();
@@ -37,6 +38,7 @@ if(doc.value==0){
     sem.style.display ="none";
     college.style.display ="none";
     deg_awarded_on.style.display = "block";
+    cgpa.style.display ="block";
     deg_awarded_on.required = true;
 }else if(doc.value==4 || doc.value ==5){
     sem.style.display ="none";
@@ -61,6 +63,9 @@ if(doc.value==0){
     hide();
     inSgpa.style.display = "block";
     total_sem.required = true;
+}else if(doc.value==10){
+    hide();
+    
 }
 const getTotal=()=>{
 

@@ -35,14 +35,14 @@ if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && 
 
     $mpdf = new Mpdf(); 
 
-    $data = '<div style="height:3rem;"></div>';
+    $data = '<div style="height:3rem;"></div>
+                <div><p style="text-align:right";>Date:'.$date.'</p></div>';
 
     if($document == 0 || $document == 2){
         
         $data .= (
             '
             <div>
-                <pre><p>MCE/Dean-SA/study Cer/'.$cur_ac_year.'                                                  Date : '.$date.'</p></pre></div> 
                 <h1>study certificate</h1>
                 <p>This is to certify that Mr/Ms. <span>'.$name.'</span> bearing USN: <span>'.$usn.'</span> is a bonafide student of this institution.  He/She is eligible for '.$year.' year B.E. in <span>'.$branch.'</span> during the Academic year <span>'.$cur_ac_year.'</span></p>
                 <p>His/her character and conduct are/were good, during his/her stay in this College.</p>
@@ -55,7 +55,6 @@ if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && 
             $corpus_fund = $_POST['corpus_fund'];
             $data .= (
                 '<div>
-                <pre><p>MCE/Dean-SA/study Cer/'.$cur_ac_year.'                                                  Date : '.$date.'</p></pre> 
                 <h1>STUDY CERTIFICATE FOR LOAN</h1>
                     <p>This is to certify that Mr/Ms. <span>'.$name.'</span>  bearing USN: <span>'.$usn.'</span> is a bonafide student of this institution.  He/She is eligible for '.$year.' year B.E. in <span>'.$branch.'</span> during the Academic year <span>'.$cur_ac_year.'</span></p>
                     <p>He/She has to pay the fee details as follows.</p>
@@ -85,7 +84,6 @@ if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && 
                     $data .= (
                         
                         '<div>
-                        <pre><p>MCE/Dean-SA/CCC/'.$cur_ac_year.'                                                  Date : '.$date.'</p></pre> 
                             <h1>COURSE COMPLETION CERTIFICATE</h1>
                             <p>This is to certify that Mr/Ms. <span>'.$name.'</span> bearing USN: <span>'.$usn.'</span> is a bonafide student of this institution and studied B.E. in <span>'.$branch.'</span> during the academic year <span>'.$start_year.'</span> to <span> '.$completion_year.'</span>.</p>
                             <p>He/She has completed his/her four years Programme.  He/She has successfully fulfilled the course requirements and has attained the qualification for which the certificate is to be awarded during <span>'.$deg_awarde_on.'</span>. 
@@ -101,7 +99,6 @@ if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && 
                 $data .= (
                     
                     '<div>
-                    <pre><p>MCE/Dean-SA/CC/'.$cur_ac_year.'                                                  Date : '.$date.'</p></pre> 
                     <h1>Character Certificate</h1>
                         <p>This is to certify that Mr/Ms. <span>'.$name.'</span> bearing USN: <span>'.$usn.'</span> is a bonafide student of this institution and studied B.E. in <span>'.$branch.'</span> during the academic year <span>'.$start_year.'</span> to  <span>'.$completion_year.'</span>.</p>
                         <p>His/Her character and conduct were good, during the stay in this College.</p>
@@ -115,7 +112,6 @@ if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && 
                 $data .= (
                     
                     '<div>
-                    <pre><p>MCE/Dean-SA/NOC/'.$cur_ac_year.'                                                  Date : '.$date.'</p></pre> 
                         <h1>No Objection Certificate</h1>
                         <p>This is to certify that Mr/Ms. <span>'.$name.'.</span> bearing USN: <span>'.$usn.'</span>, joining this  institution for the year '.$start_year.'  has not completed B.E in our institution (M.C.E, Hassan).The college has no objection in the above said candidate pursuing his study elsewhere.</p>
                         <p>His character and conduct were Satisfactory.</p>
@@ -128,7 +124,6 @@ if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && 
                 $data .= (
                     
                     '<div>
-                    <pre><p>MCE/Dean-SA/NOC/'.$cur_ac_year.'                                                  Date : '.$date.'</p></pre> 
                         <h1>No Objection Certificate</h1>
                         <p>This is to certify that Mr/Ms. <span>'.$name.'.</span> bearing USN: <span>'.$usn.'</span> was a bonafide student of this institution.  He/She was pursuing <span>'.$year.'</span> year B.E. in <span>'.$branch.'</span> during the Academic year <span>'.$cur_ac_year.'</span>.</p>
                         <p>His/her character and conduct are/were good, during his/her stay in this College.</p>
@@ -196,7 +191,6 @@ if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && 
                     
                     '<div>
                     
-                    <p style="text-align:right;">Date : '.$date.'</p> 
                         <h1>Expenditure Certificate</h1>
                         <p>This is to certify that Mr./Ms. <span>'.$name.'</span>  bearing USN: <span>'.$usn.'</span> bonafide student of this institution studying  <span>'.$sem.'</span> semester B.E in  <span>'.$branch.'</span> under aided/unaided/Government  seat/management seat  during <span>'.$cur_ac_year.'</span></p>
                         <p>The probable expenditure for his/her '.$year.' years degree course will be.</p>
@@ -283,268 +277,13 @@ if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && 
                     
                 </div>'
                 );
-            // }else if($year == '2nd'){
-            //         $tut_fee2=$_POST['tut_fee2'];
-
-            //         $ex_fee2 = $_POST['ex_fee2'];
-
-            //         $corp_fee2 = $_POST['corp_fee2'];
-                    
-            //         $book_fee2 = $_POST['book_fee2'];
-                    
-            //         $acc_fee2 = $_POST['acc_fee2'];
-                    
-            //         $lap_fee2 = $_POST['lap_fee2'];
-                    
-            //         $proj_fee2 = $_POST['proj_fee2'];
-                    
-            //         $tot_fee2 = $_POST['tot_fee2'];
-
-            //         $gt_in_words = $_POST['gt_in_words'];
-
-            //         $grand_tot_fee = $_POST['grand_tot_fee'];
-
-            //         $data .= (
-                    
-            //             '<div>
-            //             <pre><p>MCE/Dean-SA/EC/'.$cur_ac_year.'                                                  Date : '.$date.'</p></pre> 
-            //                 <h1>Expenditure Certificate</h1>
-            //                 <p>This is to certify that Mr./Ms. <span>'.$name.'</span>  bearing USN: <span>'.$usn.'</span> bonafide student of this institution studying  <span>'.$sem.'</span> semester B.E in  <span>'.$branch.'</span> under aided/unaided/Government  seat/management seat  during <span>'.$cur_ac_year.'</span></p>
-            //                 <p>The probable expenditure for his/her '.$year.' year will be.</p>
-            //                 <table class = "table">
-            //                 <tr>
-            //                     <th>Particulars</th>
-            //                     <th>II Yr.</th>
-            //                     <th>Grand Total.</th>
-            //                 </tr>
-            //                 <tr>
-            //                     <td>Tuition fee</td>
-            //                     <td>'.$tut_fee2.'</td>
-            //                 </tr>
-            //                     <tr>
-            //                     <td>Other Fee (Exam Fee +University Reg Fee+Other University Fee</td>
-            //                     <td>'.$ex_fee2.'</td>
-            //                     </tr>
-            //                 <tr>
-            //                     <td>MTES (R) Corpus Fund (Tentative)</td>
-            //                     <td>'.$corp_fee2.'</td>
-            //                 </tr>
-            //                 <tr>
-            //                     <td>Books</td>
-            //                     <td>'.$book_fee2.'</td>
-            //                 </tr>
-            //                 <tr>
-            //                     <td>Drawing Board, Drafter, Calculator & Accessories</td>
-            //                     <td>'.$acc_fee2.'</td>
-            //                 </tr>
-            //                 <tr>
-            //                     <td>Computer / Laptop</td>
-            //                     <td>'.$lap_fee2.'</td>
-            //                 </tr>
-            //                 <tr>
-            //                     <td>Project</td>
-            //                     <td>'.$proj_fee2.'</td>
-            //                 </tr>
-            //                 <tr>
-            //                     <td><span>Total<span></td>
-            //                     <td><span>'.$tot_fee2.'<span></td>
-            //                     <td><span>'.$grand_tot_fee.'<span></td>
-            //                 </tr>
-            //             </table>       
-            //             <p><span>Rs: '.$grand_tot_fee.'</span> (Rs '.$gt_in_words.') <br>He/She bears good character and conduct.</p>
-            //             <p><span>Note</span></p>
-            //             <p style = "font-size: 14px;">1) Issue the D D for Corpus Fund In the Favor Of Malnad Technical Education Society ®, Hassan, <br>
-            //             2) issue the D D for Tuition fee in the favour of Principal, Malnad College of Engineering, Hassan.
-            //             </p>
-                        
-            //         </div>'
-            //         );
-            //     }else if($year=='3rd'){
-            //         $tut_fee3=$_POST['tut_fee3'];
-
-            //         $ex_fee3 = $_POST['ex_fee3'];
-
-            //         $corp_fee3 = $_POST['corp_fee3'];
-                    
-            //         $book_fee3 = $_POST['book_fee3'];
-                    
-            //         $acc_fee3 = $_POST['acc_fee3'];
-                    
-            //         $lap_fee3 = $_POST['lap_fee3'];
-                    
-            //         $proj_fee3 = $_POST['proj_fee3'];
-                    
-            //         $tot_fee3 = $_POST['tot_fee3'];
-
-            //         $gt_in_words = $_POST['gt_in_words'];
-
-            //         $grand_tot_fee = $_POST['grand_tot_fee'];
-
-            //         $data .= (
-                    
-            //             '<div>
-            //             <pre><p>MCE/Dean-SA/EC/'.$cur_ac_year.'                                                  Date : '.$date.'</p></pre> 
-            //                 <h1>Expenditure Certificate</h1>
-            //                 <p>This is to certify that Mr./Ms. <span>'.$name.'</span>  bearing USN: <span>'.$usn.'</span> bonafide student of this institution studying  <span>'.$sem.'</span> semester B.E in  <span>'.$branch.'</span> under aided/unaided/Government  seat/management seat  during <span>'.$cur_ac_year.'</span></p>
-            //                 <p>The probable expenditure for his/her '.$year.' year will be.</p>
-            //                 <table class = "table">
-            //                 <tr>
-            //                     <th>Particulars</th>
-            //                     <th>III Yr.</th>
-            //                     <th>Grand Total.</th>
-            //                 </tr>
-            //                 <tr>
-            //                     <td>Tuition fee</td>
-            //                     <td>'.$tut_fee3.'</td>
-            //                 </tr>
-            //                     <tr>
-            //                     <td>Other Fee (Exam Fee +University Reg Fee+Other University Fee</td>
-            //                     <td>'.$ex_fee3.'</td>
-            //                     </tr>
-            //                 <tr>
-            //                     <td>MTES (R) Corpus Fund (Tentative)</td>
-            //                     <td>'.$corp_fee3.'</td>
-            //                 </tr>
-            //                 <tr>
-            //                     <td>Books</td>
-            //                     <td>'.$book_fee3.'</td>
-            //                 </tr>
-            //                 <tr>
-            //                     <td>Drawing Board, Drafter, Calculator & Accessories</td>
-            //                     <td>'.$acc_fee3.'</td>
-            //                 </tr>
-            //                 <tr>
-            //                     <td>Computer / Laptop</td>
-            //                     <td>'.$lap_fee3.'</td>
-            //                 </tr>
-            //                 <tr>
-            //                     <td>Project</td>
-            //                     <td>'.$proj_fee3.'</td>
-            //                 </tr>
-            //                 <tr>
-            //                     <td><span>Total<span></td>
-            //                     <td><span>'.$tot_fee3.'<span></td>
-            //                     <td><span>'.$grand_tot_fee.'<span></td>
-            //                 </tr>
-            //             </table>       
-            //             <p><span>Rs: '.$grand_tot_fee.'</span> (Rs '.$gt_in_words.') <br>He/She bears good character and conduct.</p>
-            //             <p><span>Note</span></p>
-            //             <p style = "font-size: 14px;">1) Issue the D D for Corpus Fund In the Favor Of Malnad Technical Education Society ®, Hassan, <br>
-            //             2) issue the D D for Tuition fee in the favour of Principal, Malnad College of Engineering, Hassan.
-            //             </p>
-                        
-            //         </div>'
-            //         );
-            //     }else if($year=='4th'){
-            //         $tut_fee4=$_POST['tut_fee4'];
-
-            //         $ex_fee4 = $_POST['ex_fee4'];
-
-            //         $corp_fee4 = $_POST['corp_fee4'];
-                    
-            //         $book_fee4 = $_POST['book_fee4'];
-                    
-            //         $acc_fee4 = $_POST['acc_fee4'];
-                    
-            //         $lap_fee4 = $_POST['lap_fee4'];
-                    
-            //         $proj_fee4 = $_POST['proj_fee4'];
-                    
-            //         $tot_fee4 = $_POST['tot_fee4'];
-
-            //         $gt_in_words = $_POST['gt_in_words'];
-
-            //         $grand_tot_fee = $_POST['grand_tot_fee'];
-
-            //         $data .= (
-                    
-            //             '<div>
-            //             <pre><p>MCE/Dean-SA/EC/'.$cur_ac_year.'                                                  Date : '.$date.'</p></pre> 
-            //                 <h1>Expenditure Certificate</h1>
-            //                 <p>This is to certify that Mr./Ms. <span>'.$name.'</span>  bearing USN: <span>'.$usn.'</span> bonafide student of this institution studying  <span>'.$sem.'</span> semester B.E in  <span>'.$branch.'</span> under aided/unaided/Government  seat/management seat  during <span>'.$cur_ac_year.'</span></p>
-            //                 <p>The probable expenditure for his/her '.$year.' year will be.</p>
-            //                 <table class = "table">
-            //                 <tr>
-            //                     <th>Particulars</th>
-            //                     <th>IV Yr.</th>
-            //                     <th>Grand Total.</th>
-            //                 </tr>
-            //                 <tr>
-            //                     <td>Tuition fee</td>
-            //                     <td>'.$tut_fee4.'</td>
-            //                 </tr>
-            //                     <tr>
-            //                     <td>Other Fee (Exam Fee +University Reg Fee+Other University Fee</td>
-            //                     <td>'.$ex_fee4.'</td>
-            //                     </tr>
-            //                 <tr>
-            //                     <td>MTES (R) Corpus Fund (Tentative)</td>
-            //                     <td>'.$corp_fee4.'</td>
-            //                 </tr>
-            //                 <tr>
-            //                     <td>Books</td>
-            //                     <td>'.$book_fee4.'</td>
-            //                 </tr>
-            //                 <tr>
-            //                     <td>Drawing Board, Drafter, Calculator & Accessories</td>
-            //                     <td>'.$acc_fee4.'</td>
-            //                 </tr>
-            //                 <tr>
-            //                     <td>Computer / Laptop</td>
-            //                     <td>'.$lap_fee4.'</td>
-            //                 </tr>
-            //                 <tr>
-            //                     <td>Project</td>
-            //                     <td>'.$proj_fee4.'</td>
-            //                 </tr>
-            //                 <tr>
-            //                     <td><span>Total<span></td>
-            //                     <td><span>'.$tot_fee4.'<span></td>
-            //                     <td><span>'.$grand_tot_fee.'<span></td>
-            //                 </tr>
-            //             </table>       
-            //             <p><span>Rs: '.$grand_tot_fee.'</span> (Rs '.$gt_in_words.') <br>He/She bears good character and conduct.</p>
-            //             <p><span>Note</span></p>
-            //             <p style = "font-size: 14px;">1) Issue the D D for Corpus Fund In the Favor Of Malnad Technical Education Society ®, Hassan, <br>
-            //             2) issue the D D for Tuition fee in the favour of Principal, Malnad College of Engineering, Hassan.
-            //             </p>
-                        
-            //         </div>'
-            //         );
-
-            //     }
+            
             }else if($document==8){
                 $cou_comp_year = $_POST['courseCompYear'];
                 $cgpa = $_POST['cgpa'];
 
-                // $sem1 = $_POST['sem1'];
-                // $sem2 = $_POST['sem2'];
-                // $sem3 = $_POST['sem3'];
-                // $sem4 = $_POST['sem4'];
-                // $sem5 = $_POST['sem5'];
-                // $sem6 = $_POST['sem6'];
-                // $sem7 = $_POST['sem7'];
-                // $sem8 = $_POST['sem8'];
-                // // calculate cgpa
-        
-                // $sem1_perc = round((($sem1 - 0.75)*10),2);
-                // $sem2_perc = round((($sem2 - 0.75)*10),2);
-                // $sem3_perc = round((($sem3 - 0.75)*10),2);
-                // $sem4_perc = round((($sem4 - 0.75)*10),2);
-                // $sem5_perc = round((($sem5 - 0.75)*10),2);
-                // $sem6_perc = round((($sem6 - 0.75)*10),2);
-                // $sem7_perc = round((($sem7 - 0.75)*10),2);
-                // $sem8_perc = round((($sem8 - 0.75)*10),2);
-                
-                // // calculate cgpa
-        
-                // $cgpa =  round((($sem1 + $sem2 +$sem3 + $sem4 +$sem5 + $sem6 + $sem7 + $sem8)/8.0),2);
-                
-                // // calculate cgpa
-                // $perc = round(($cgpa-0.75*10),2);
                     $data .=(
                     '<div>  
-                    <pre><p>MCE/Dean-SA/CCC/'.$cur_ac_year.'                                                  Date : '.$date.'</p></pre> 
                     <h1>Provisional Degree Certificate</h1>
                         <p>This is to certify that Mr/Ms <span>'.$name.'</span> has successfully completed Bachelor of Engineering degree in <span>'.$branch.'</span> in the year <span>'.$cou_comp_year.'</span> with USN <span>'.$usn.'</span>  and he/she is eligible for the award of  degree. His/Her CGPA is <span>'.$cgpa.'</span> for the entire B.E programme. </p>
                         <p>His/Her character and conduct have been good during the stay in our college.</p>
@@ -558,7 +297,6 @@ if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && 
 
                         $data .=(
                             '<div>
-                            <pre><p>MCE/Dean-SA/'.$cur_ac_year.'                                                  Date : '.$date.'</p></pre> 
                                 <h1>TO WHOMSOEVER IT MAY CONCERN</h1>
                                 <p>This is to certify that the CGPA scored by <span>'.$name.'</span> who has completed B.E. in <span>'.$branch.' </span> with  USN <span>'.$usn.'</span> from this Institution the equivalent percentage of marks for the CGPA earned in the below semester is as follows:-</p>
                                 <table>
@@ -584,7 +322,6 @@ if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && 
 
                         $data .=(
                             '<div>
-                            <pre><p>MCE/Dean-SA/'.$cur_ac_year.'                                                  Date : '.$date.'</p></pre> 
                                 <h1>TO WHOMSOEVER IT MAY CONCERN</h1>
                                 <p>This is to certify that the CGPA scored by <span>'.$name.'</span> who has completed B.E. in <span>'.$branch.' </span> with  USN <span>'.$usn.'</span> from this Institution the equivalent percentage of marks for the CGPA earned in the below semester is as follows:-</p>
                                 <table>
@@ -617,7 +354,6 @@ if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && 
 
                         $data .=(
                             '<div>
-                            <pre><p>MCE/Dean-SA/'.$cur_ac_year.'                                                  Date : '.$date.'</p></pre> 
                                 <h1>TO WHOMSOEVER IT MAY CONCERN</h1>
                                 <p>This is to certify that the CGPA scored by <span>'.$name.'</span> who has completed B.E. in <span>'.$branch.' </span> with  USN <span>'.$usn.'</span> from this Institution the equivalent percentage of marks for the CGPA earned in the below semester is as follows:-</p>
                                 <table>
@@ -658,7 +394,6 @@ if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && 
 
                         $data .=(
                             '<div>
-                            <pre><p>MCE/Dean-SA/'.$cur_ac_year.'                                                  Date : '.$date.'</p></pre> 
                                 <h1>TO WHOMSOEVER IT MAY CONCERN</h1>
                                 <p>This is to certify that the CGPA scored by <span>'.$name.'</span> who has completed B.E. in <span>'.$branch.' </span> with  USN <span>'.$usn.'</span> from this Institution the equivalent percentage of marks for the CGPA earned in the below semester is as follows:-</p>
                                 <table>
@@ -706,7 +441,6 @@ if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && 
 
                         $data .=(
                             '<div>
-                            <pre><p>MCE/Dean-SA/'.$cur_ac_year.'                                                  Date : '.$date.'</p></pre> 
                                 <h1>TO WHOMSOEVER IT MAY CONCERN</h1>
                                 <p>This is to certify that the CGPA scored by <span>'.$name.'</span> who has completed B.E. in <span>'.$branch.' </span> with  USN <span>'.$usn.'</span> from this Institution the equivalent percentage of marks for the CGPA earned in the below semester is as follows:-</p>
                                 <table>
@@ -760,7 +494,6 @@ if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && 
 
                         $data .=(
                             '<div>
-                            <pre><p>MCE/Dean-SA/'.$cur_ac_year.'                                                  Date : '.$date.'</p></pre> 
                                 <h1>TO WHOMSOEVER IT MAY CONCERN</h1>
                                 <p>This is to certify that the CGPA scored by <span>'.$name.'</span> who has completed B.E. in <span>'.$branch.' </span> with  USN <span>'.$usn.'</span> from this Institution the equivalent percentage of marks for the CGPA earned in the below semester is as follows:-</p>
                                 <table>
@@ -821,7 +554,6 @@ if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && 
 
                         $data .=(
                             '<div>
-                            <pre><p>MCE/Dean-SA/'.$cur_ac_year.'                                                  Date : '.$date.'</p></pre> 
                                 <h1>TO WHOMSOEVER IT MAY CONCERN</h1>
                                 <p>This is to certify that the CGPA scored by <span>'.$name.'</span> who has completed B.E. in <span>'.$branch.' </span> with  USN <span>'.$usn.'</span> from this Institution the equivalent percentage of marks for the CGPA earned in the below semester is as follows:-</p>
                                 <table>
@@ -895,8 +627,7 @@ if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && 
                         $perc = round(($cgpa-0.75*10),2);
                             $data .=(
                                 '<div>
-                                <pre><p>MCE/Dean-SA/'.$cur_ac_year.'                                                  Date : '.$date.'</p></pre> 
-                                    <h1>TO WHOMSOEVER IT MAY CONCERN</h1>
+                                        <h1>TO WHOMSOEVER IT MAY CONCERN</h1>
                                     <p>This is to certify that the CGPA scored by <span>'.$name.'</span> who has completed B.E. in <span>'.$branch.' </span> with  USN <span>'.$usn.'</span> from this Institution the equivalent percentage of marks for the CGPA earned in the below semester is as follows:-</p>
                                     <table>
                                         <tr>
@@ -956,8 +687,7 @@ if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && 
                         $cur_ac_year = $_POST['curAcYear'];
                         $data .= (
                             '<div>
-                                <pre><p>MCE/Dean-SA/'.$cur_ac_year.'                                                  Date : '.$date.'</p></pre> 
-                                <h1>TO WHOM SO EVER IT MAY CONCERN</h1>
+                                    <h1>TO WHOM SO EVER IT MAY CONCERN</h1>
                                 <p>This is to certify that Mr/Ms. <span>'.$name.'</span> bearing USN: <span>'.$usn.'</span> is a bonafide student of this institution studying  <span>'.$year.'</span> year <span>B.E</span> in <span>'.$branch.'</span> during the academic year  <span>'.$cur_ac_year.'. </span></p>
                                 <p>He has submitted his original SSLC & PU Marks card to this college at the time of admission and the same was sent to Visvesvaraya Technological University, Belagavi, for verification. However the Copy of the original Marks Card is Attested.</p>
                             </div>');
