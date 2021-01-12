@@ -50,7 +50,6 @@ if(doc.value==0){
     courseCompYear.style.display = "none";
 }else if(doc.value==7){
     expenditure_table.style.display = "block";
-    gt_in_words.required = "true";
     hide();
 
 }else if(doc.value==8){
@@ -64,6 +63,10 @@ if(doc.value==0){
     total_sem.required = true;
 }
 const getTotal=()=>{
+
+    
+   
+
     const tut_fee1 = document.getElementById('tut_fee1').value;
     const tut_fee2 = document.getElementById('tut_fee2').value;
     const tut_fee3 = document.getElementById('tut_fee3').value;
@@ -104,126 +107,143 @@ const getTotal=()=>{
     const tot_fee3_value = document.getElementById('tot_fee3_value');
     const tot_fee4_value = document.getElementById('tot_fee4_value');
 
-    const grand_tot_fee = document.getElementById('grand_tot_fee');
   
 
-    const total_fee1=parseInt(tut_fee1) + parseInt(ex_fee1) + parseInt(corp_fee1) + parseInt(book_fee1) + parseInt(lap_fee1) + parseInt(acc_fee1) + parseInt(proj_fee1)
+    const total_fee1=parseInt(tut_fee1) + parseInt(ex_fee1) +  parseInt(book_fee1) + parseInt(lap_fee1) + parseInt(acc_fee1) + parseInt(proj_fee1)
     tot_fee1_value.value=total_fee1;
 
-    const total_fee2=parseInt(tut_fee2) + parseInt(ex_fee2) + parseInt(corp_fee2) + parseInt(book_fee2) + parseInt(lap_fee2) + parseInt(acc_fee2) + parseInt(proj_fee2)
+    const total_fee2=parseInt(tut_fee2) + parseInt(ex_fee2) +  parseInt(book_fee2) + parseInt(lap_fee2) + parseInt(acc_fee2) + parseInt(proj_fee2)
     tot_fee2_value.value=total_fee2;
 
-    const total_fee3=parseInt(tut_fee3) + parseInt(ex_fee3) + parseInt(corp_fee3) + parseInt(book_fee3) + parseInt(lap_fee3) + parseInt(acc_fee3) + parseInt(proj_fee3)
+    const total_fee3=parseInt(tut_fee3) + parseInt(ex_fee3) +  parseInt(book_fee3) + parseInt(lap_fee3) + parseInt(acc_fee3) + parseInt(proj_fee3)
     tot_fee3_value.value=total_fee3;
 
-    const total_fee4=parseInt(tut_fee4) + parseInt(ex_fee4) + parseInt(corp_fee4) + parseInt(book_fee4) + parseInt(lap_fee4) + parseInt(acc_fee4) + parseInt(proj_fee4)
+    const total_fee4=parseInt(tut_fee4) + parseInt(ex_fee4) + parseInt(book_fee4) + parseInt(lap_fee4) + parseInt(acc_fee4) + parseInt(proj_fee4)
     tot_fee4_value.value=total_fee4;
+    if(year.value=='2nd'){
+        tot_fee1_value.value='-';
+      
+    }else if(year.value=='3rd'){
+        tot_fee1_value.value='-';
+       tot_fee2_value.value='-';
+    }else if(year.value=='4th'){
+        tot_fee1_value.value='-';
+        tot_fee1_value.value='-';
+        tot_fee3_value.value='-';
+    }
 
-    if(year.value=='1st'){
-        
-    const grand_total_fee = total_fee1 + total_fee2 + total_fee3 + total_fee4;
-    grand_tot_fee_value.value = grand_total_fee;
-}else if(year.value=='2nd'){
-    const grand_total_fee = total_fee2;
-    grand_tot_fee_value.value = grand_total_fee;
-}else if(year.value=='3rd'){
-    const grand_total_fee = total_fee3;
-    grand_tot_fee_value.value = grand_total_fee;
-}else if(year.value=='4th'){
-    const grand_total_fee = total_fee4;
-    grand_tot_fee_value.value = grand_total_fee;
-}
 }
 
 if(year.value=='2nd'){
-   tut_fee1.value = true;
-   tut_fee1.value = '-';
-
-   tut_fee3.disabled = true;
-   tut_fee4.disabled = true;
-   
-   ex_fee1.disabled = true;
-   ex_fee3.disabled = true;
-   ex_fee4.disabled = true;
-
-   corp_fee1.disabled = true;
-   corp_fee3.disabled = true;
-   corp_fee4.disabled = true;
-
-   book_fee1.disabled = true;
-   book_fee3.disabled = true;
-   book_fee4.disabled = true;
-   
-   acc_fee1.disabled = true;
-   acc_fee3.disabled = true;
-   acc_fee4.disabled = true;
-   
-   lap_fee1.disabled = true;
-   lap_fee3.disabled = true;
-   lap_fee4.disabled = true;
-
-   proj_fee1.disabled = true;
-   proj_fee3.disabled = true;
-   proj_fee4.disabled = true;
-}else if(year.value=='3rd'){
-    tut_fee1.disabled = true;
-   tut_fee2.disabled = true;
-   tut_fee4.disabled = true;
-   
-   ex_fee1.disabled = true;
-   ex_fee2.disabled = true;
-   ex_fee4.disabled = true;
-
-   corp_fee1.disabled = true;
-   corp_fee2.disabled = true;
-   corp_fee4.disabled = true;
-
-   book_fee1.disabled = true;
-   book_fee2.disabled = true;
-   book_fee4.disabled = true;
-   
-   acc_fee1.disabled = true;
-   acc_fee2.disabled = true;
-   acc_fee4.disabled = true;
-   
-   lap_fee1.disabled = true;
-   lap_fee2.disabled = true;
-   lap_fee4.disabled = true;
-
-   proj_fee1.disabled = true;
-   proj_fee2.disabled = true;
-   proj_fee4.disabled = true;
-}else if(year.value=='4th'){
-    tut_fee1.disabled = true;
-    tut_fee2.disabled = true;
-    tut_fee3.disabled = true;
+    tut_fee1.value = '-';
+    tut_fee1.readOnly = true;
     
-    ex_fee1.disabled = true;
-    ex_fee2.disabled = true;
-    ex_fee3.disabled = true;
+    ex_fee1.value = '-';
+    ex_fee1.readOnly = true;
+   
  
-    corp_fee1.disabled = true;
-    corp_fee2.disabled = true;
-    corp_fee3.disabled = true;
+    corp_fee1.value = '-';
+    corp_fee1.readOnly = true;
  
-    book_fee1.disabled = true;
-    book_fee2.disabled = true;
-    book_fee3.disabled = true;
+ 
+    book_fee1.value = '-';
+    book_fee1.readOnly = true;
+ 
+ 
     
-    acc_fee1.disabled = true;
-    acc_fee2.disabled = true;
-    acc_fee3.disabled = true;
+    acc_fee1.value = '-';
+     acc_fee1.readOnly = true;
     
-    lap_fee1.disabled = true;
-    lap_fee2.disabled = true;
-    lap_fee3.disabled = true;
+    lap_fee1.value = '-';
+     lap_fee1.readOnly = true;
  
-    proj_fee1.disabled = true;
-    proj_fee2.disabled = true;
-    proj_fee3.disabled = true;
-}
-
-// console.log(year.value);
-// if(year.value=='1st'){
-//     gt_in_words.onclick = "total();"
-// }
+    proj_fee1.value = '-';
+    proj_fee1.readOnly = true;
+ 
+ }else if(year.value=='3rd'){
+     tut_fee1.value = '-';
+     tut_fee2.value = '-';
+     tut_fee1.readOnly = true;
+     tut_fee2.readOnly = true;
+ 
+    
+    ex_fee1.value = '-';
+    ex_fee2.value = '-';
+    ex_fee1.readOnly = true;
+    ex_fee2.readOnly = true;
+ 
+ 
+    corp_fee1.value = '-';
+    corp_fee2.value = '-';
+    corp_fee1.readOnly = true;
+    corp_fee2.readOnly = true;
+ 
+    book_fee1.value = '-';
+    book_fee2.value = '-';
+    book_fee1.readOnly = true;
+    book_fee2.readOnly = true;
+    
+    acc_fee1.value = '-';
+    acc_fee2.value = '-';
+    acc_fee1.readOnly = true;
+    acc_fee2.readOnly = true;
+    
+    lap_fee1.value = '-';
+    lap_fee2.value = '-';
+    lap_fee1.readOnly = true;
+    lap_fee2.readOnly = true;
+ 
+    proj_fee1.value = '-';
+    proj_fee2.value = '-';
+    proj_fee1.readOnly = true;
+    proj_fee2.readOnly = true;
+ }else if(year.value=='4th'){
+     tut_fee1.value = '-';
+     tut_fee2.value = '-';
+     tut_fee3.value = '-';
+     tut_fee1.readOnly = true;
+     tut_fee2.readOnly = true;
+     tut_fee3.readOnly = true;
+     
+     ex_fee1.value = '-';
+     ex_fee2.value = '-';
+     ex_fee3.value = '-';
+     ex_fee1.readOnly = true;
+    ex_fee2.readOnly = true;
+    ex_fee3.readOnly = true;
+  
+     corp_fee1.value = '-';
+     corp_fee2.value = '-';
+     corp_fee3.value = '-';
+     corp_fee1.readOnly = true;
+    corp_fee2.readOnly = true;
+    corp_fee3.readOnly = true;
+  
+     book_fee1.value = '-';
+     book_fee2.value = '-';
+     book_fee3.value = '-';
+     book_fee1.readOnly = true;
+     book_fee2.readOnly = true;
+     book_fee3.readOnly = true;
+     
+     acc_fee1.value = '-';
+     acc_fee2.value = '-';
+     acc_fee3.value = '-';
+     acc_fee1.readOnly = true;
+     acc_fee2.readOnly = true;
+     acc_fee3.readOnly = true;
+     
+     lap_fee1.value = '-';
+     lap_fee2.value = '-';
+     lap_fee3.value = '-';
+     lap_fee1.readOnly = true;
+     lap_fee2.readOnly = true;
+     lap_fee3.readOnly = true;
+  
+     proj_fee1.value = '-';
+     proj_fee2.value = '-';
+     proj_fee3.value = '-';
+     proj_fee1.readOnly = true;
+     proj_fee2.readOnly = true;
+     proj_fee3.readOnly = true;
+ }

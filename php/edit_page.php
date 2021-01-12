@@ -132,7 +132,6 @@
                             <th>II Yr.</th>
                             <th>III Yr.</th>
                             <th>IV Yr.</th>
-                            <th>Grand Total.</th>
                         </tr>
                         <tr>
                             <td>Tuition fee</td>
@@ -149,13 +148,7 @@
                             <td><input type="text" class="form-control"  name="ex_fee3" id="ex_fee3"></input></td>
                             <td><input type="text" class="form-control"  name="ex_fee4" id="ex_fee4"></input></td>
                        </tr>
-                        <tr>
-                            <td>MTES (R) Corpus Fund (Tentative)</td>
-                            <td><input type="text" class="form-control"  name="corp_fee1" id="corp_fee1"></input></td>
-                            <td><input type="text" class="form-control"  name="corp_fee2" id="corp_fee2"></input></td>
-                            <td><input type="text" class="form-control"  name="corp_fee3" id="corp_fee3"></input></td>
-                            <td><input type="text" class="form-control"  name="corp_fee4" id="corp_fee4"></input></td>
-                        </tr>
+                       
                         <tr>
                             <td>Books</td>
                             <td><input type="text" class="form-control"  name="book_fee1" id="book_fee1"></input></td>
@@ -190,14 +183,18 @@
                             <td><input id="tot_fee2_value" name="tot_fee2" class="form-control" readonly></input></td>
                             <td><input id="tot_fee3_value" name="tot_fee3" class="form-control" readonly></input></td>
                             <td><input id="tot_fee4_value" name="tot_fee4" class="form-control" readonly></input></td>
-                            <td><input id="grand_tot_fee_value" name="grand_tot_fee" class="form-control" readonly></input></td>
+                        </tr>
+                        <tr>
+                            <td>MTES (R) Corpus Fund (Tentative)</td>
+                            <td><input type="text" class="form-control"  name="corp_fee1" id="corp_fee1"></input></td>
+                            <td><input type="text" class="form-control"  name="corp_fee2" id="corp_fee2"></input></td>
+                            <td><input type="text" class="form-control"  name="corp_fee3" id="corp_fee3"></input></td>
+                            <td><input type="text" class="form-control"  name="corp_fee4" id="corp_fee4"></input></td>
                         </tr>
                     </table>
-                    <label for="total">Grand total in words:</label>
-                    <input type="text" placeholder="Grand total in words" name="gt_in_words" class="form-control" id="gt_in_words" onclick="getTotal();">
-
+                   
     </div>
-        <button  class="btn btn-success" type="submit" name="download" id="btn_sbt">Download</button>
+        <button  class="btn btn-success" type="submit" name="download" id="btn_sbt" onclick="getTotal();">Download</button>
 
     
         </form>

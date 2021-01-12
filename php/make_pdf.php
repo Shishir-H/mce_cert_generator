@@ -137,7 +137,6 @@ if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && 
                 );
         
             }else if($document==7){
-                if($year=='1st'){
                 $tut_fee1=$_POST['tut_fee1'];
                 $tut_fee2=$_POST['tut_fee2'];
                 $tut_fee3=$_POST['tut_fee3'];
@@ -178,21 +177,29 @@ if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && 
                 $tot_fee3 = $_POST['tot_fee3'];
                 $tot_fee4 = $_POST['tot_fee4'];
 
-                $gt_in_words = $_POST['gt_in_words'];
+             
 
-                $grand_tot_fee = $_POST['grand_tot_fee'];
-
-
+                $year = $_POST['year'];
+                if($year=='1st'){
+                    $year='4';
+                }else if($year=='2nd'){
+                    $year='3';
+                }else if($year=='3rd'){
+                    $year='2';
+                }else if($year=='4th'){
+                    $year='1';
+                }
 
 
                 
                 $data .= (
                     
                     '<div>
-                    <pre><p>MCE/Dean-SA/EC/'.$cur_ac_year.'                                                  Date : '.$date.'</p></pre> 
+                    
+                    <p style="text-align:right;">Date : '.$date.'</p> 
                         <h1>Expenditure Certificate</h1>
                         <p>This is to certify that Mr./Ms. <span>'.$name.'</span>  bearing USN: <span>'.$usn.'</span> bonafide student of this institution studying  <span>'.$sem.'</span> semester B.E in  <span>'.$branch.'</span> under aided/unaided/Government  seat/management seat  during <span>'.$cur_ac_year.'</span></p>
-                        <p>The probable expenditure for his/her 4 years degree course will be.</p>
+                        <p>The probable expenditure for his/her '.$year.' years degree course will be.</p>
                         <table class = "table">
                         <tr>
                             <th>Particulars</th>
@@ -200,7 +207,6 @@ if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && 
                             <th>II Yr.</th>
                             <th>III Yr.</th>
                             <th>IV Yr.</th>
-                            <th>Grand Total.</th>
                         </tr>
                         <tr>
                             <td>Tuition fee</td>
@@ -216,13 +222,7 @@ if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && 
                             <td>'.$ex_fee3.'</td>
                             <td>'.$ex_fee4.'</td>
                             </tr>
-                        <tr>
-                            <td>MTES (R) Corpus Fund (Tentative)</td>
-                            <td>'.$corp_fee1.'</td>
-                            <td>'.$corp_fee2.'</td>
-                            <td>'.$corp_fee3.'</td>
-                            <td>'.$corp_fee4.'</td>
-                        </tr>
+                       
                         <tr>
                             <td>Books</td>
                             <td>'.$book_fee1.'</td>
@@ -252,252 +252,267 @@ if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && 
                             <td>'.$proj_fee4.'</td>
                         </tr>
                         <tr>
-                            <td><span>Total<span></td>
+                            <td style = "border:none;"></td>
                             <td><span>'.$tot_fee1.'<span></td>
                             <td><span>'.$tot_fee2.'<span></td>
                             <td><span>'.$tot_fee3.'<span></td>
                             <td><span>'.$tot_fee4.'<span></td>
-                            <td><span>'.$grand_tot_fee.'<span></td>
                         </tr>
-                    </table>       
-                    <p><span>Rs: '.$grand_tot_fee.'</span> (Rs '.$gt_in_words.') <br>He/She bears good character and conduct.</p>
-                    <p><span>Note</span></p>
-                    <p style = "font-size: 14px;">1) Issue the D D for Corpus Fund In the Favor Of Malnad Technical Education Society ®, Hassan, <br>
-                    2) issue the D D for Tuition fee in the favour of Principal, Malnad College of Engineering, Hassan.
+                        
+                        <tr class= "noBorder">       
+                            <td colspan="5" >
+                                <p style="text-decoration:underline;"><span>Note</span></p>    
+                            </td><br>
+                        </tr>
+                        <tr class = "noBorder">
+                            <td colspan="5">
+                                <p style = "font-size: 14px;">1) Issue the D D for Corpus Fund In the Favor Of Malnad Technical Education Society ®, Hassan.
+                            </td>
+                        </tr> <br><br>
+                        <tr>
+                            <td>MTES (R) Corpus Fund (Tentative)</td>
+                            <td>'.$corp_fee1.'</td>
+                            <td>'.$corp_fee2.'</td>
+                            <td>'.$corp_fee3.'</td>
+                            <td>'.$corp_fee4.'</td>
+                        </tr>
+                    </table>
+                    <br>
+                    <pre>     2)Issue the D D for Tuition fee in the favour of Principal, Malnad College of Engineering, Hassan.</pre>
                     </p>
                     
                 </div>'
                 );
-            }else if($year == '2nd'){
-                    $tut_fee2=$_POST['tut_fee2'];
+            // }else if($year == '2nd'){
+            //         $tut_fee2=$_POST['tut_fee2'];
 
-                    $ex_fee2 = $_POST['ex_fee2'];
+            //         $ex_fee2 = $_POST['ex_fee2'];
 
-                    $corp_fee2 = $_POST['corp_fee2'];
+            //         $corp_fee2 = $_POST['corp_fee2'];
                     
-                    $book_fee2 = $_POST['book_fee2'];
+            //         $book_fee2 = $_POST['book_fee2'];
                     
-                    $acc_fee2 = $_POST['acc_fee2'];
+            //         $acc_fee2 = $_POST['acc_fee2'];
                     
-                    $lap_fee2 = $_POST['lap_fee2'];
+            //         $lap_fee2 = $_POST['lap_fee2'];
                     
-                    $proj_fee2 = $_POST['proj_fee2'];
+            //         $proj_fee2 = $_POST['proj_fee2'];
                     
-                    $tot_fee2 = $_POST['tot_fee2'];
+            //         $tot_fee2 = $_POST['tot_fee2'];
 
-                    $gt_in_words = $_POST['gt_in_words'];
+            //         $gt_in_words = $_POST['gt_in_words'];
 
-                    $grand_tot_fee = $_POST['grand_tot_fee'];
+            //         $grand_tot_fee = $_POST['grand_tot_fee'];
 
-                    $data .= (
+            //         $data .= (
                     
-                        '<div>
-                        <pre><p>MCE/Dean-SA/EC/'.$cur_ac_year.'                                                  Date : '.$date.'</p></pre> 
-                            <h1>Expenditure Certificate</h1>
-                            <p>This is to certify that Mr./Ms. <span>'.$name.'</span>  bearing USN: <span>'.$usn.'</span> bonafide student of this institution studying  <span>'.$sem.'</span> semester B.E in  <span>'.$branch.'</span> under aided/unaided/Government  seat/management seat  during <span>'.$cur_ac_year.'</span></p>
-                            <p>The probable expenditure for his/her '.$year.' year will be.</p>
-                            <table class = "table">
-                            <tr>
-                                <th>Particulars</th>
-                                <th>II Yr.</th>
-                                <th>Grand Total.</th>
-                            </tr>
-                            <tr>
-                                <td>Tuition fee</td>
-                                <td>'.$tut_fee2.'</td>
-                            </tr>
-                                <tr>
-                                <td>Other Fee (Exam Fee +University Reg Fee+Other University Fee</td>
-                                <td>'.$ex_fee2.'</td>
-                                </tr>
-                            <tr>
-                                <td>MTES (R) Corpus Fund (Tentative)</td>
-                                <td>'.$corp_fee2.'</td>
-                            </tr>
-                            <tr>
-                                <td>Books</td>
-                                <td>'.$book_fee2.'</td>
-                            </tr>
-                            <tr>
-                                <td>Drawing Board, Drafter, Calculator & Accessories</td>
-                                <td>'.$acc_fee2.'</td>
-                            </tr>
-                            <tr>
-                                <td>Computer / Laptop</td>
-                                <td>'.$lap_fee2.'</td>
-                            </tr>
-                            <tr>
-                                <td>Project</td>
-                                <td>'.$proj_fee2.'</td>
-                            </tr>
-                            <tr>
-                                <td><span>Total<span></td>
-                                <td><span>'.$tot_fee2.'<span></td>
-                                <td><span>'.$grand_tot_fee.'<span></td>
-                            </tr>
-                        </table>       
-                        <p><span>Rs: '.$grand_tot_fee.'</span> (Rs '.$gt_in_words.') <br>He/She bears good character and conduct.</p>
-                        <p><span>Note</span></p>
-                        <p style = "font-size: 14px;">1) Issue the D D for Corpus Fund In the Favor Of Malnad Technical Education Society ®, Hassan, <br>
-                        2) issue the D D for Tuition fee in the favour of Principal, Malnad College of Engineering, Hassan.
-                        </p>
+            //             '<div>
+            //             <pre><p>MCE/Dean-SA/EC/'.$cur_ac_year.'                                                  Date : '.$date.'</p></pre> 
+            //                 <h1>Expenditure Certificate</h1>
+            //                 <p>This is to certify that Mr./Ms. <span>'.$name.'</span>  bearing USN: <span>'.$usn.'</span> bonafide student of this institution studying  <span>'.$sem.'</span> semester B.E in  <span>'.$branch.'</span> under aided/unaided/Government  seat/management seat  during <span>'.$cur_ac_year.'</span></p>
+            //                 <p>The probable expenditure for his/her '.$year.' year will be.</p>
+            //                 <table class = "table">
+            //                 <tr>
+            //                     <th>Particulars</th>
+            //                     <th>II Yr.</th>
+            //                     <th>Grand Total.</th>
+            //                 </tr>
+            //                 <tr>
+            //                     <td>Tuition fee</td>
+            //                     <td>'.$tut_fee2.'</td>
+            //                 </tr>
+            //                     <tr>
+            //                     <td>Other Fee (Exam Fee +University Reg Fee+Other University Fee</td>
+            //                     <td>'.$ex_fee2.'</td>
+            //                     </tr>
+            //                 <tr>
+            //                     <td>MTES (R) Corpus Fund (Tentative)</td>
+            //                     <td>'.$corp_fee2.'</td>
+            //                 </tr>
+            //                 <tr>
+            //                     <td>Books</td>
+            //                     <td>'.$book_fee2.'</td>
+            //                 </tr>
+            //                 <tr>
+            //                     <td>Drawing Board, Drafter, Calculator & Accessories</td>
+            //                     <td>'.$acc_fee2.'</td>
+            //                 </tr>
+            //                 <tr>
+            //                     <td>Computer / Laptop</td>
+            //                     <td>'.$lap_fee2.'</td>
+            //                 </tr>
+            //                 <tr>
+            //                     <td>Project</td>
+            //                     <td>'.$proj_fee2.'</td>
+            //                 </tr>
+            //                 <tr>
+            //                     <td><span>Total<span></td>
+            //                     <td><span>'.$tot_fee2.'<span></td>
+            //                     <td><span>'.$grand_tot_fee.'<span></td>
+            //                 </tr>
+            //             </table>       
+            //             <p><span>Rs: '.$grand_tot_fee.'</span> (Rs '.$gt_in_words.') <br>He/She bears good character and conduct.</p>
+            //             <p><span>Note</span></p>
+            //             <p style = "font-size: 14px;">1) Issue the D D for Corpus Fund In the Favor Of Malnad Technical Education Society ®, Hassan, <br>
+            //             2) issue the D D for Tuition fee in the favour of Principal, Malnad College of Engineering, Hassan.
+            //             </p>
                         
-                    </div>'
-                    );
-                }else if($year=='3rd'){
-                    $tut_fee3=$_POST['tut_fee3'];
+            //         </div>'
+            //         );
+            //     }else if($year=='3rd'){
+            //         $tut_fee3=$_POST['tut_fee3'];
 
-                    $ex_fee3 = $_POST['ex_fee3'];
+            //         $ex_fee3 = $_POST['ex_fee3'];
 
-                    $corp_fee3 = $_POST['corp_fee3'];
+            //         $corp_fee3 = $_POST['corp_fee3'];
                     
-                    $book_fee3 = $_POST['book_fee3'];
+            //         $book_fee3 = $_POST['book_fee3'];
                     
-                    $acc_fee3 = $_POST['acc_fee3'];
+            //         $acc_fee3 = $_POST['acc_fee3'];
                     
-                    $lap_fee3 = $_POST['lap_fee3'];
+            //         $lap_fee3 = $_POST['lap_fee3'];
                     
-                    $proj_fee3 = $_POST['proj_fee3'];
+            //         $proj_fee3 = $_POST['proj_fee3'];
                     
-                    $tot_fee3 = $_POST['tot_fee3'];
+            //         $tot_fee3 = $_POST['tot_fee3'];
 
-                    $gt_in_words = $_POST['gt_in_words'];
+            //         $gt_in_words = $_POST['gt_in_words'];
 
-                    $grand_tot_fee = $_POST['grand_tot_fee'];
+            //         $grand_tot_fee = $_POST['grand_tot_fee'];
 
-                    $data .= (
+            //         $data .= (
                     
-                        '<div>
-                        <pre><p>MCE/Dean-SA/EC/'.$cur_ac_year.'                                                  Date : '.$date.'</p></pre> 
-                            <h1>Expenditure Certificate</h1>
-                            <p>This is to certify that Mr./Ms. <span>'.$name.'</span>  bearing USN: <span>'.$usn.'</span> bonafide student of this institution studying  <span>'.$sem.'</span> semester B.E in  <span>'.$branch.'</span> under aided/unaided/Government  seat/management seat  during <span>'.$cur_ac_year.'</span></p>
-                            <p>The probable expenditure for his/her '.$year.' year will be.</p>
-                            <table class = "table">
-                            <tr>
-                                <th>Particulars</th>
-                                <th>III Yr.</th>
-                                <th>Grand Total.</th>
-                            </tr>
-                            <tr>
-                                <td>Tuition fee</td>
-                                <td>'.$tut_fee3.'</td>
-                            </tr>
-                                <tr>
-                                <td>Other Fee (Exam Fee +University Reg Fee+Other University Fee</td>
-                                <td>'.$ex_fee3.'</td>
-                                </tr>
-                            <tr>
-                                <td>MTES (R) Corpus Fund (Tentative)</td>
-                                <td>'.$corp_fee3.'</td>
-                            </tr>
-                            <tr>
-                                <td>Books</td>
-                                <td>'.$book_fee3.'</td>
-                            </tr>
-                            <tr>
-                                <td>Drawing Board, Drafter, Calculator & Accessories</td>
-                                <td>'.$acc_fee3.'</td>
-                            </tr>
-                            <tr>
-                                <td>Computer / Laptop</td>
-                                <td>'.$lap_fee3.'</td>
-                            </tr>
-                            <tr>
-                                <td>Project</td>
-                                <td>'.$proj_fee3.'</td>
-                            </tr>
-                            <tr>
-                                <td><span>Total<span></td>
-                                <td><span>'.$tot_fee3.'<span></td>
-                                <td><span>'.$grand_tot_fee.'<span></td>
-                            </tr>
-                        </table>       
-                        <p><span>Rs: '.$grand_tot_fee.'</span> (Rs '.$gt_in_words.') <br>He/She bears good character and conduct.</p>
-                        <p><span>Note</span></p>
-                        <p style = "font-size: 14px;">1) Issue the D D for Corpus Fund In the Favor Of Malnad Technical Education Society ®, Hassan, <br>
-                        2) issue the D D for Tuition fee in the favour of Principal, Malnad College of Engineering, Hassan.
-                        </p>
+            //             '<div>
+            //             <pre><p>MCE/Dean-SA/EC/'.$cur_ac_year.'                                                  Date : '.$date.'</p></pre> 
+            //                 <h1>Expenditure Certificate</h1>
+            //                 <p>This is to certify that Mr./Ms. <span>'.$name.'</span>  bearing USN: <span>'.$usn.'</span> bonafide student of this institution studying  <span>'.$sem.'</span> semester B.E in  <span>'.$branch.'</span> under aided/unaided/Government  seat/management seat  during <span>'.$cur_ac_year.'</span></p>
+            //                 <p>The probable expenditure for his/her '.$year.' year will be.</p>
+            //                 <table class = "table">
+            //                 <tr>
+            //                     <th>Particulars</th>
+            //                     <th>III Yr.</th>
+            //                     <th>Grand Total.</th>
+            //                 </tr>
+            //                 <tr>
+            //                     <td>Tuition fee</td>
+            //                     <td>'.$tut_fee3.'</td>
+            //                 </tr>
+            //                     <tr>
+            //                     <td>Other Fee (Exam Fee +University Reg Fee+Other University Fee</td>
+            //                     <td>'.$ex_fee3.'</td>
+            //                     </tr>
+            //                 <tr>
+            //                     <td>MTES (R) Corpus Fund (Tentative)</td>
+            //                     <td>'.$corp_fee3.'</td>
+            //                 </tr>
+            //                 <tr>
+            //                     <td>Books</td>
+            //                     <td>'.$book_fee3.'</td>
+            //                 </tr>
+            //                 <tr>
+            //                     <td>Drawing Board, Drafter, Calculator & Accessories</td>
+            //                     <td>'.$acc_fee3.'</td>
+            //                 </tr>
+            //                 <tr>
+            //                     <td>Computer / Laptop</td>
+            //                     <td>'.$lap_fee3.'</td>
+            //                 </tr>
+            //                 <tr>
+            //                     <td>Project</td>
+            //                     <td>'.$proj_fee3.'</td>
+            //                 </tr>
+            //                 <tr>
+            //                     <td><span>Total<span></td>
+            //                     <td><span>'.$tot_fee3.'<span></td>
+            //                     <td><span>'.$grand_tot_fee.'<span></td>
+            //                 </tr>
+            //             </table>       
+            //             <p><span>Rs: '.$grand_tot_fee.'</span> (Rs '.$gt_in_words.') <br>He/She bears good character and conduct.</p>
+            //             <p><span>Note</span></p>
+            //             <p style = "font-size: 14px;">1) Issue the D D for Corpus Fund In the Favor Of Malnad Technical Education Society ®, Hassan, <br>
+            //             2) issue the D D for Tuition fee in the favour of Principal, Malnad College of Engineering, Hassan.
+            //             </p>
                         
-                    </div>'
-                    );
-                }else if($year=='4th'){
-                    $tut_fee4=$_POST['tut_fee4'];
+            //         </div>'
+            //         );
+            //     }else if($year=='4th'){
+            //         $tut_fee4=$_POST['tut_fee4'];
 
-                    $ex_fee4 = $_POST['ex_fee4'];
+            //         $ex_fee4 = $_POST['ex_fee4'];
 
-                    $corp_fee4 = $_POST['corp_fee4'];
+            //         $corp_fee4 = $_POST['corp_fee4'];
                     
-                    $book_fee4 = $_POST['book_fee4'];
+            //         $book_fee4 = $_POST['book_fee4'];
                     
-                    $acc_fee4 = $_POST['acc_fee4'];
+            //         $acc_fee4 = $_POST['acc_fee4'];
                     
-                    $lap_fee4 = $_POST['lap_fee4'];
+            //         $lap_fee4 = $_POST['lap_fee4'];
                     
-                    $proj_fee4 = $_POST['proj_fee4'];
+            //         $proj_fee4 = $_POST['proj_fee4'];
                     
-                    $tot_fee4 = $_POST['tot_fee4'];
+            //         $tot_fee4 = $_POST['tot_fee4'];
 
-                    $gt_in_words = $_POST['gt_in_words'];
+            //         $gt_in_words = $_POST['gt_in_words'];
 
-                    $grand_tot_fee = $_POST['grand_tot_fee'];
+            //         $grand_tot_fee = $_POST['grand_tot_fee'];
 
-                    $data .= (
+            //         $data .= (
                     
-                        '<div>
-                        <pre><p>MCE/Dean-SA/EC/'.$cur_ac_year.'                                                  Date : '.$date.'</p></pre> 
-                            <h1>Expenditure Certificate</h1>
-                            <p>This is to certify that Mr./Ms. <span>'.$name.'</span>  bearing USN: <span>'.$usn.'</span> bonafide student of this institution studying  <span>'.$sem.'</span> semester B.E in  <span>'.$branch.'</span> under aided/unaided/Government  seat/management seat  during <span>'.$cur_ac_year.'</span></p>
-                            <p>The probable expenditure for his/her '.$year.' year will be.</p>
-                            <table class = "table">
-                            <tr>
-                                <th>Particulars</th>
-                                <th>IV Yr.</th>
-                                <th>Grand Total.</th>
-                            </tr>
-                            <tr>
-                                <td>Tuition fee</td>
-                                <td>'.$tut_fee4.'</td>
-                            </tr>
-                                <tr>
-                                <td>Other Fee (Exam Fee +University Reg Fee+Other University Fee</td>
-                                <td>'.$ex_fee4.'</td>
-                                </tr>
-                            <tr>
-                                <td>MTES (R) Corpus Fund (Tentative)</td>
-                                <td>'.$corp_fee4.'</td>
-                            </tr>
-                            <tr>
-                                <td>Books</td>
-                                <td>'.$book_fee4.'</td>
-                            </tr>
-                            <tr>
-                                <td>Drawing Board, Drafter, Calculator & Accessories</td>
-                                <td>'.$acc_fee4.'</td>
-                            </tr>
-                            <tr>
-                                <td>Computer / Laptop</td>
-                                <td>'.$lap_fee4.'</td>
-                            </tr>
-                            <tr>
-                                <td>Project</td>
-                                <td>'.$proj_fee4.'</td>
-                            </tr>
-                            <tr>
-                                <td><span>Total<span></td>
-                                <td><span>'.$tot_fee4.'<span></td>
-                                <td><span>'.$grand_tot_fee.'<span></td>
-                            </tr>
-                        </table>       
-                        <p><span>Rs: '.$grand_tot_fee.'</span> (Rs '.$gt_in_words.') <br>He/She bears good character and conduct.</p>
-                        <p><span>Note</span></p>
-                        <p style = "font-size: 14px;">1) Issue the D D for Corpus Fund In the Favor Of Malnad Technical Education Society ®, Hassan, <br>
-                        2) issue the D D for Tuition fee in the favour of Principal, Malnad College of Engineering, Hassan.
-                        </p>
+            //             '<div>
+            //             <pre><p>MCE/Dean-SA/EC/'.$cur_ac_year.'                                                  Date : '.$date.'</p></pre> 
+            //                 <h1>Expenditure Certificate</h1>
+            //                 <p>This is to certify that Mr./Ms. <span>'.$name.'</span>  bearing USN: <span>'.$usn.'</span> bonafide student of this institution studying  <span>'.$sem.'</span> semester B.E in  <span>'.$branch.'</span> under aided/unaided/Government  seat/management seat  during <span>'.$cur_ac_year.'</span></p>
+            //                 <p>The probable expenditure for his/her '.$year.' year will be.</p>
+            //                 <table class = "table">
+            //                 <tr>
+            //                     <th>Particulars</th>
+            //                     <th>IV Yr.</th>
+            //                     <th>Grand Total.</th>
+            //                 </tr>
+            //                 <tr>
+            //                     <td>Tuition fee</td>
+            //                     <td>'.$tut_fee4.'</td>
+            //                 </tr>
+            //                     <tr>
+            //                     <td>Other Fee (Exam Fee +University Reg Fee+Other University Fee</td>
+            //                     <td>'.$ex_fee4.'</td>
+            //                     </tr>
+            //                 <tr>
+            //                     <td>MTES (R) Corpus Fund (Tentative)</td>
+            //                     <td>'.$corp_fee4.'</td>
+            //                 </tr>
+            //                 <tr>
+            //                     <td>Books</td>
+            //                     <td>'.$book_fee4.'</td>
+            //                 </tr>
+            //                 <tr>
+            //                     <td>Drawing Board, Drafter, Calculator & Accessories</td>
+            //                     <td>'.$acc_fee4.'</td>
+            //                 </tr>
+            //                 <tr>
+            //                     <td>Computer / Laptop</td>
+            //                     <td>'.$lap_fee4.'</td>
+            //                 </tr>
+            //                 <tr>
+            //                     <td>Project</td>
+            //                     <td>'.$proj_fee4.'</td>
+            //                 </tr>
+            //                 <tr>
+            //                     <td><span>Total<span></td>
+            //                     <td><span>'.$tot_fee4.'<span></td>
+            //                     <td><span>'.$grand_tot_fee.'<span></td>
+            //                 </tr>
+            //             </table>       
+            //             <p><span>Rs: '.$grand_tot_fee.'</span> (Rs '.$gt_in_words.') <br>He/She bears good character and conduct.</p>
+            //             <p><span>Note</span></p>
+            //             <p style = "font-size: 14px;">1) Issue the D D for Corpus Fund In the Favor Of Malnad Technical Education Society ®, Hassan, <br>
+            //             2) issue the D D for Tuition fee in the favour of Principal, Malnad College of Engineering, Hassan.
+            //             </p>
                         
-                    </div>'
-                    );
+            //         </div>'
+            //         );
 
-                }
+            //     }
             }else if($document==8){
                 $cou_comp_year = $_POST['courseCompYear'];
                 $cgpa = $_POST['cgpa'];
