@@ -31,7 +31,7 @@ if(doc.value==0){
 }else if(doc.value==1){
     college.style.display = "none";
     courseCompYear.style.display="none";
-    loan_table.style.display = "block";
+    expenditure_table.style.display = "block";
     hide();
 }else if(doc.value==3){
 

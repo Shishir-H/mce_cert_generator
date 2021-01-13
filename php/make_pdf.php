@@ -53,28 +53,152 @@ if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && 
             $tuition_fee = $_POST['tuition_fee'];
             $other_fee = $_POST['other_fee'];
             $corpus_fund = $_POST['corpus_fund'];
+            $tut_fee1=$_POST['tut_fee1'];
+            $tut_fee2=$_POST['tut_fee2'];
+            $tut_fee3=$_POST['tut_fee3'];
+            $tut_fee4=$_POST['tut_fee4'];
+
+            $ex_fee1 = $_POST['ex_fee1'];
+            $ex_fee2 = $_POST['ex_fee2'];
+            $ex_fee3 = $_POST['ex_fee3'];
+            $ex_fee4 = $_POST['ex_fee4'];
+
+            $corp_fee1 = $_POST['corp_fee1'];
+            $corp_fee2 = $_POST['corp_fee2'];
+            $corp_fee3 = $_POST['corp_fee3'];
+            $corp_fee4 = $_POST['corp_fee4'];
+            
+            $book_fee1 = $_POST['book_fee1'];
+            $book_fee2 = $_POST['book_fee2'];
+            $book_fee3 = $_POST['book_fee3'];
+            $book_fee4 = $_POST['book_fee4'];
+            
+            $acc_fee1 = $_POST['acc_fee1'];
+            $acc_fee2 = $_POST['acc_fee2'];
+            $acc_fee3 = $_POST['acc_fee3'];
+            $acc_fee4 = $_POST['acc_fee4'];
+            
+            $lap_fee1 = $_POST['lap_fee1'];
+            $lap_fee2 = $_POST['lap_fee2'];
+            $lap_fee3 = $_POST['lap_fee3'];
+            $lap_fee4 = $_POST['lap_fee4'];
+            
+            $proj_fee1 = $_POST['proj_fee1'];
+            $proj_fee2 = $_POST['proj_fee2'];
+            $proj_fee3 = $_POST['proj_fee3'];
+            $proj_fee4 = $_POST['proj_fee4'];
+            
+            $tot_fee1 = $_POST['tot_fee1'];
+            $tot_fee2 = $_POST['tot_fee2'];
+            $tot_fee3 = $_POST['tot_fee3'];
+            $tot_fee4 = $_POST['tot_fee4'];
+
+         
+
+            $year = $_POST['year'];
+            if($year=='1st'){
+                $rem_year='4';
+            }else if($year=='2nd'){
+                $rem_year='3';
+            }else if($year=='3rd'){
+                $rem_year='2';
+            }else if($year=='4th'){
+                $rem_year='1';
+            }
+
+
+            
             $data .= (
-                '<div>
-                <h1>STUDY CERTIFICATE FOR LOAN</h1>
-                    <p>This is to certify that Mr/Ms. <span>'.$name.'</span>  bearing USN: <span>'.$usn.'</span> is a bonafide student of this institution.  He/She is eligible for '.$year.' year B.E. in <span>'.$branch.'</span> during the Academic year <span>'.$cur_ac_year.'</span></p>
-                    <p>He/She has to pay the fee details as follows.</p>
-                    <table class = "table">
                 
+                '<div>
+                
+                    <h1>STUDY CERTIFICATE FOR LOAN</h1>
+                    <p>This is to certify that Mr/Ms. <span>'.$name.'</span>  bearing USN: <span>'.$usn.'</span> is a bonafide student of this institution.  He/She is eligible for <span>'.$year.'</span> year B.E. in <span>'.$branch.'</span> during the Academic year <span>'.$cur_ac_year.'</span>.</p> 
+                    <p>The probable expenditure for his/her <span>'.$rem_year.'</span> years degree course will be.</p>
+                    <table class = "table">
+                    <tr>
+                        <th>Particulars</th>
+                        <th>I Yr.</th>
+                        <th>II Yr.</th>
+                        <th>III Yr.</th>
+                        <th>IV Yr.</th>
+                    </tr>
+                    <tr>
+                        <td>Tuition fee</td>
+                        <td>'.$tut_fee1.'</td>
+                        <td>'.$tut_fee2.'</td>
+                        <td>'.$tut_fee3.'</td>
+                        <td>'.$tut_fee4.'</td>
+                    </tr>
                         <tr>
-                            <td>Tuition fee </td>
-                            <td>'.$tuition_fee.'</td>
+                        <td>Other Fee (Exam Fee +University Reg Fee+Other University Fee</td>
+                        <td>'.$ex_fee1.'</td>
+                        <td>'.$ex_fee2.'</td>
+                        <td>'.$ex_fee3.'</td>
+                        <td>'.$ex_fee4.'</td>
                         </tr>
-                        <tr>
-                            <td>Other fee</td>
-                            <td>'.$other_fee.'</td>
-                        </tr>
-                        <tr>
-                            <td>MTES (R) Corpus Fund (Tentative)</td>
-                            <td>'.$corpus_fund.'</td>
-                        </tr>
-                    </table>
-                    <p>His/her character and conduct are/were good, during his/her stay in this College.</p>
-                </div>');
+                   
+                    <tr>
+                        <td>Books</td>
+                        <td>'.$book_fee1.'</td>
+                        <td>'.$book_fee2.'</td>
+                        <td>'.$book_fee3.'</td>
+                        <td>'.$book_fee4.'</td>
+                    </tr>
+                    <tr>
+                        <td>Drawing Board, Drafter, Calculator & Accessories</td>
+                        <td>'.$acc_fee1.'</td>
+                        <td>'.$acc_fee2.'</td>
+                        <td>'.$acc_fee3.'</td>
+                        <td>'.$acc_fee4.'</td>
+                    </tr>
+                    <tr>
+                        <td>Computer / Laptop</td>
+                        <td>'.$lap_fee1.'</td>
+                        <td>'.$lap_fee2.'</td>
+                        <td>'.$lap_fee3.'</td>
+                        <td>'.$lap_fee4.'</td>
+                    </tr>
+                    <tr>
+                        <td>Project</td>
+                        <td>'.$proj_fee1.'</td>
+                        <td>'.$proj_fee2.'</td>
+                        <td>'.$proj_fee3.'</td>
+                        <td>'.$proj_fee4.'</td>
+                    </tr>
+                    <tr>
+                        <td style = "border:none;"></td>
+                        <td>'.$tot_fee1.'</td>
+                        <td>'.$tot_fee2.'</td>
+                        <td>'.$tot_fee3.'</td>
+                        <td>'.$tot_fee4.'</td>
+                    </tr>
+                    
+                    <tr class= "noBorder">       
+                        <td colspan="5" >
+                            <p style="text-decoration:underline;"><span>Note</span></p>    
+                        </td><br>
+                    </tr>
+                    <tr class = "noBorder">
+                        <td colspan="5">
+                            <p style = "font-size: 14px;"> Issue the D D for Corpus Fund In the Favor Of Malnad Technical Education Society ®, Hassan.
+                        </td>
+                    </tr> <br><br><br>
+                    <tr>
+                        <td>MTES (R) Corpus Fund (Tentative)</td>
+                        <td>'.$corp_fee1.'</td>
+                        <td>'.$corp_fee2.'</td>
+                        <td>'.$corp_fee3.'</td>
+                        <td>'.$corp_fee4.'</td>
+                    </tr>
+                </table>
+                <br>
+                <p style="text-decoration:underline;"><span>Note</span></p>
+                Issue the D D for Tuition fee in the favour of Principal, Malnad College of Engineering, Hassan.
+                </p>
+                
+            </div>'
+            );
 
             }else if($document ==3){
                 $start_year = $_POST['startYear'];
@@ -247,10 +371,10 @@ if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && 
                         </tr>
                         <tr>
                             <td style = "border:none;"></td>
-                            <td><span>'.$tot_fee1.'<span></td>
-                            <td><span>'.$tot_fee2.'<span></td>
-                            <td><span>'.$tot_fee3.'<span></td>
-                            <td><span>'.$tot_fee4.'<span></td>
+                            <td>'.$tot_fee1.'</td>
+                            <td>'.$tot_fee2.'</td>
+                            <td>'.$tot_fee3.'</td>
+                            <td>'.$tot_fee4.'</td>
                         </tr>
                         
                         <tr class= "noBorder">       
@@ -260,9 +384,9 @@ if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && 
                         </tr>
                         <tr class = "noBorder">
                             <td colspan="5">
-                                <p style = "font-size: 14px;">1) Issue the D D for Corpus Fund In the Favor Of Malnad Technical Education Society ®, Hassan.
+                                <p style = "font-size: 14px;">Issue the D D for Corpus Fund In the Favor Of Malnad Technical Education Society ®, Hassan.
                             </td>
-                        </tr> <br><br>
+                        </tr> <br><br><br>
                         <tr>
                             <td>MTES (R) Corpus Fund (Tentative)</td>
                             <td>'.$corp_fee1.'</td>
@@ -272,7 +396,7 @@ if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && 
                         </tr>
                     </table>
                     <br>
-                    <pre>     2)Issue the D D for Tuition fee in the favour of Principal, Malnad College of Engineering, Hassan.</pre>
+                    Issue the D D for Tuition fee in the favour of Principal, Malnad College of Engineering, Hassan.
                     </p>
                     
                 </div>'

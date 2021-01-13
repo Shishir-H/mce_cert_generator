@@ -11,34 +11,25 @@ $docArr = array("Study Certificate 1 ( General )", "Study Certificate 2 ( purpos
 
 if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && isset($_POST['document']) && isset($_POST['curAcYear']))
 {
-    $name = $_POST['name'];
-    $usn = $_POST['usn'];
-    $branch = $_POST['branch'];
-    $document = $_POST['document'];
-    $curAcYear = $_POST['curAcYear'];
-    $year = $_POST['year'];
-    $mailId = $_POST['mailId'];
+    $name =  htmlspecialchars($_POST['name']);
+    $usn =  htmlspecialchars($_POST['usn']);
+    $branch =  htmlspecialchars($_POST['branch']);
+    $document =  htmlspecialchars($_POST['document']);
+    $curAcYear =  htmlspecialchars($_POST['curAcYear']);
+    $year =  htmlspecialchars($_POST['year']);
+    $mailId =  htmlspecialchars($_POST['mailId']);
 
     //to get current year
     $date = date("d/m/Y");
 
     $reqstdDoc =  $docArr[$document];
-    // Insert into DataBase
-    
-    $college = $_POST['college'];
-    $startYear = $_POST['startYear'];
-    $completionYear = $_POST['completionYear'];
-    $courseCompYear = $_POST['courseCompYear'];
 
-    // $sem = $_POST['sem'];
-    // $sem1 = $_POST['sem1'];
-    // $sem2 = $_POST['sem2'];
-    // $sem3 = $_POST['sem3'];
-    // $sem4 = $_POST['sem4'];
-    // $sem5 = $_POST['sem5'];
-    // $sem6 = $_POST['sem6'];
-    // $sem7 = $_POST['sem7'];
-    // $sem8 = $_POST['sem8'];
+    
+    $college =  htmlspecialchars($_POST['college']);
+    $startYear =  htmlspecialchars($_POST['startYear']);
+    $completionYear =  htmlspecialchars($_POST['completionYear']);
+    $courseCompYear =  htmlspecialchars($_POST['courseCompYear']);
+
 
     $sql = new Mysql();
     $sql->dbConnect();

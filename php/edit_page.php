@@ -108,22 +108,7 @@
             <input type="text" placeholder="SGPA in SEM 8" name="sem8" class="form-control" id="sem8" value ="<?php echo  $sem8 ?>">
           </div>
           <input type="text" placeholder="Enter CGPA" class="form-control" id="cgpa" name="cgpa" >
-        <div style = "display:none;  align:center;margin-left:auto;margin-right:auto;" id="loan_table">
-                     <table class = "table">
-                        <tr>
-                            <td>Tuition fee </td>
-                            <td><input type="text" placeholder="Tuition Fee" name="tuition_fee" class="form-control" value=""></input></td>
-                        </tr>
-                        <tr>
-                            <td>Other fee</td>
-                            <td><input type="text" placeholder="Other Fee" name="other_fee" class="form-control" value=""></input></td>
-                        </tr>
-                        <tr>
-                            <td>MTES (R) Corpus Fund (Tentative)</td>
-                            <td><input type="text" placeholder="Corpus Fund" name="corpus_fund" class="form-control" value=""></input></td>
-                        </tr>
-                    </table>
-    </div>
+       
     <div id="expenditure_table" style = "display:none;">
 <table class = "table" style = "align:center;margin-left:auto;margin-right:auto;" id="expenditure_table">
                         <tr>
@@ -178,19 +163,20 @@
                             <td><input type="text" class="form-control" name="proj_fee4" id="proj_fee4"></input></td>
                         </tr>
                         <tr>
-                            <td><span>Total<span></td>
-                            <td><input id="tot_fee1_value" name="tot_fee1" class="form-control" readonly></input></td>
-                            <td><input id="tot_fee2_value" name="tot_fee2" class="form-control" readonly></input></td>
-                            <td><input id="tot_fee3_value" name="tot_fee3" class="form-control" readonly></input></td>
-                            <td><input id="tot_fee4_value" name="tot_fee4" class="form-control" readonly></input></td>
-                        </tr>
-                        <tr>
                             <td>MTES (R) Corpus Fund (Tentative)</td>
                             <td><input type="text" class="form-control"  name="corp_fee1" id="corp_fee1"></input></td>
                             <td><input type="text" class="form-control"  name="corp_fee2" id="corp_fee2"></input></td>
                             <td><input type="text" class="form-control"  name="corp_fee3" id="corp_fee3"></input></td>
                             <td><input type="text" class="form-control"  name="corp_fee4" id="corp_fee4"></input></td>
                         </tr>
+                        <tr>
+                            <td><span>Total<span></td>
+                            <td><input id="tot_fee1_value" name="tot_fee1" class="form-control" readonly></input></td>
+                            <td><input id="tot_fee2_value" name="tot_fee2" class="form-control" readonly></input></td>
+                            <td><input id="tot_fee3_value" name="tot_fee3" class="form-control" readonly></input></td>
+                            <td><input id="tot_fee4_value" name="tot_fee4" class="form-control" readonly></input></td>
+                        </tr>
+                       
                     </table>
                    
     </div>
