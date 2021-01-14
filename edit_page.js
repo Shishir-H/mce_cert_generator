@@ -5,7 +5,7 @@ const year = document.getElementById('year');
 const curAcYear = document.getElementById('curAcYear');
 const sem = document.getElementById('sem');
 const doc = document.getElementById('doc');
-const inSgpa = document.getElementById('inSgpa');
+const sgpa = document.getElementById('sgpa');
 const courseCompYear = document.getElementById('courseCompYear');
 const total_sem = document.getElementById('total_sem');
 const cgpa = document.getElementById('cgpa');
@@ -14,6 +14,7 @@ const deg_awarded_on = document.getElementById('deg_awarded_on');
 
 const loan_table = document.getElementById('loan_table');
 const expenditure_table = document.getElementById('expenditure_table');
+const semester_exp = document.getElementById('semester-exp');
 
 const gt_in_words = document.getElementById('gt_in_words');
 
@@ -32,6 +33,7 @@ if(doc.value==0){
     college.style.display = "none";
     courseCompYear.style.display="none";
     expenditure_table.style.display = "block";
+ 
     hide();
 }else if(doc.value==3){
 
@@ -52,6 +54,9 @@ if(doc.value==0){
     courseCompYear.style.display = "none";
 }else if(doc.value==7){
     expenditure_table.style.display = "block";
+    semester_exp.style.display = "block";
+    semester_exp.required = true;
+    console.log(semester_exp);
     hide();
 
 }else if(doc.value==8){
@@ -61,7 +66,7 @@ if(doc.value==0){
     cgpa.style.display = "block";
 }else if(doc.value==9){
     hide();
-    inSgpa.style.display = "block";
+    sgpa.style.display = "block";
     total_sem.required = true;
 }else if(doc.value==10){
     hide();

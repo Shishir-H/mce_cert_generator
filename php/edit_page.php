@@ -96,7 +96,7 @@
           <input type="text" placeholder="Semester" name="sem" class="form-control" id="sem" value ="<?php echo  $sem ?>">
           <input type="text" placeholder="College You want to be admitted" name="college" class="form-control" id="college" value ="<?php echo  $college ?>">
           <input type="text" style="display:none;" placeholder="Degree certificate awarded or will be awarded on ex 2019 " name="degree_awarded_on" class="form-control" id="deg_awarded_on">
-          <div class="semCgpa" id="inSgpa">
+          <div class="semCgpa" id="sgpa">
             <input type="number" placeholder="Number of semesters completed" name="total_sem" class="form-control" id="totalSem">
             <input type="text" placeholder="SGPA in SEM 1" name="sem1" class="form-control" id="sem1" value ="<?php echo  $sem1 ?>">
             <input type="text" placeholder="SGPA in SEM 2" name="sem2" class="form-control" id="sem2" value ="<?php echo  $sem2 ?>">
@@ -108,6 +108,18 @@
             <input type="text" placeholder="SGPA in SEM 8" name="sem8" class="form-control" id="sem8" value ="<?php echo  $sem8 ?>">
           </div>
           <input type="text" placeholder="Enter CGPA" class="form-control" id="cgpa" name="cgpa" >
+          <select class="form-control" name="semester" id = "semester-exp" style="display: none;">
+              
+              <option value="" hidden selected>Semester</option>
+              <option value="I">I</option>
+              <option value="II">II</option>
+              <option value="III">III</option>
+              <option value="IV">IV</option>
+              <option value="V">V</option>
+              <option value="VI">VI</option>
+              <option value="VII">VII</option>
+              <option value="VIII">VIII</option>
+          </select>
        
     <div id="expenditure_table" style = "display:none;">
 <table class = "table" style = "align:center;margin-left:auto;margin-right:auto;" id="expenditure_table">

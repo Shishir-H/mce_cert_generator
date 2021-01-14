@@ -256,6 +256,9 @@ if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && 
                 );
         
             }else if($document==7){
+                $semester = $_POST['semester'];
+                
+
                 $tut_fee1=$_POST['tut_fee1'];
                 $tut_fee2=$_POST['tut_fee2'];
                 $tut_fee3=$_POST['tut_fee3'];
@@ -316,7 +319,7 @@ if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && 
                     '<div>
                     
                         <h1>Expenditure Certificate</h1>
-                        <p>This is to certify that Mr./Ms. <span>'.$name.'</span>  bearing USN: <span>'.$usn.'</span> bonafide student of this institution studying  <span>'.$sem.'</span> semester B.E in  <span>'.$branch.'</span> under aided/unaided/Government  seat/management seat  during <span>'.$cur_ac_year.'</span></p>
+                        <p>This is to certify that Mr./Ms. <span>'.$name.'</span>  bearing USN: <span>'.$usn.'</span> bonafide student of this institution studying  <span>'.$semester.'</span> semester B.E in  <span>'.$branch.'</span> under aided/unaided/Government  seat/management seat  during <span>'.$cur_ac_year.'</span></p>
                         <p>The probable expenditure for his/her '.$year.' years degree course will be.</p>
                         <table class = "table">
                         <tr>
