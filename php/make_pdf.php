@@ -242,20 +242,22 @@ if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && 
                     </div>'
                 );
 
-            }else if($document==6){
+            }
+            // else if($document==6){
             
             
-                $data .= (
+            //     $data .= (
                     
-                    '<div>
-                        <h1>No Objection Certificate</h1>
-                        <p>This is to certify that Mr/Ms. <span>'.$name.'.</span> bearing USN: <span>'.$usn.'</span> was a bonafide student of this institution.  He/She was pursuing <span>'.$year.'</span> year B.E. in <span>'.$branch.'</span> during the Academic year <span>'.$cur_ac_year.'</span>.</p>
-                        <p>His/her character and conduct are/were good, during his/her stay in this College.</p>
-                        <p>This institution has No Objection to <span>Mr. '.$name.'</span> for newly admission to <span>'.$college.'</span> </p>
-                    </div>'
-                );
+            //         '<div>
+            //             <h1>No Objection Certificate</h1>
+            //             <p>This is to certify that Mr/Ms. <span>'.$name.'.</span> bearing USN: <span>'.$usn.'</span> was a bonafide student of this institution.  He/She was pursuing <span>'.$year.'</span> year B.E. in <span>'.$branch.'</span> during the Academic year <span>'.$cur_ac_year.'</span>.</p>
+            //             <p>His/her character and conduct are/were good, during his/her stay in this College.</p>
+            //             <p>This institution has No Objection to <span>Mr. '.$name.'</span> for newly admission to <span>'.$college.'</span> </p>
+            //         </div>'
+            //     );
         
-            }else if($document==7){
+            // }
+            else if($document==7){
                 $semester = $_POST['semester'];
                 
 

@@ -138,7 +138,7 @@ const getTotal=()=>{
        tot_fee2_value.value='-';
     }else if(year.value=='4th'){
         tot_fee1_value.value='-';
-        tot_fee1_value.value='-';
+        tot_fee2_value.value='-';
         tot_fee3_value.value='-';
     }
 

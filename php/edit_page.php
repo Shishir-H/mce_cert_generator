@@ -81,7 +81,7 @@
               <option value="3">Course completion Certificate</option>
               <option value="4">Character Certificate</option>
               <option value="5">No Objection Certificate ( General )</option>
-              <option value="6">No Objection Certificate ( For admission to particular college )</option>
+              <!-- <option value="6">No Objection Certificate ( For admission to particular college )</option> -->
               <option value="7">Expenditure Certificate ( General )</option>
               <option value="8">Provisional Degree Certificate</option>
               <option value="9">CGPA Calculation Certificate</option>
