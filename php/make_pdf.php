@@ -181,7 +181,7 @@ if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && 
                     </tr>
                     <tr class = "noBorder">
                         <td colspan="5">
-                            <p style = "font-size: 14px;"> Issue the D D for Corpus Fund In the Favor Of Malnad Technical Education Society ®, Hassan.
+                            <p style = "font-size: 14px;"> Issue the D D for above said Tuition fee and others fee in the favour of Principal, Malnad College of Engineering, Hassan.
                         </td>
                     </tr> <br><br><br>
                     <tr>
@@ -194,7 +194,7 @@ if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && 
                 </table>
                 <br>
                 <p style="text-decoration:underline;"><span>Note</span></p>
-                Issue the D D for Tuition fee in the favour of Principal, Malnad College of Engineering, Hassan.
+                Issue the D D for Corpus Fund In the Favor Of Malnad Technical Education Society ®, Hassan.
                 </p>
                 
             </div>'
@@ -389,7 +389,8 @@ if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && 
                         </tr>
                         <tr class = "noBorder">
                             <td colspan="5">
-                                <p style = "font-size: 14px;">Issue the D D for Corpus Fund In the Favor Of Malnad Technical Education Society ®, Hassan.
+                    Issue the D D for above said Tuition fee & others fees in the favour of Principal, Malnad College of Engineering, Hassan.
+                    <p style = "font-size: 14px;">
                             </td>
                         </tr> <br><br><br>
                         <tr>
@@ -401,7 +402,7 @@ if(isset($_POST['name'])  && isset($_POST['usn']) && isset($_POST['branch']) && 
                         </tr>
                     </table>
                     <br>
-                    Issue the D D for Tuition fee in the favour of Principal, Malnad College of Engineering, Hassan.
+                    Issue the D D for Corpus Fund In the Favor Of Malnad Technical Education Society ®, Hassan.
                     </p>
                     
                 </div>'
